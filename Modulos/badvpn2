@@ -2,7 +2,7 @@
 clear
 fun_badvpn() {
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m            GERENCIAR BADVPN             \E[0m"
+    echo -e "\E[44;1;37m            MANAGE BADVPN / BadVPN စီမံရန်             \E[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     if ps x | grep -w udpvpn | grep -v grep 1>/dev/null 2>/dev/null; then
@@ -22,7 +22,7 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
         if ps x | grep -w udpvpn | grep -v grep 1>/dev/null 2>/dev/null; then
             clear
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m            GERENCIAR BADVPN             \E[0m"
+    echo -e "\E[44;1;37m            MANAGE BADVPN / BadVPN စီမံရန်             \E[0m"
 echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
             echo ""
             fun_stopbad () {
@@ -40,7 +40,7 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
             echo ""
             fun_stopbad
             echo ""
-            echo -e "\033[1;32mBADVPN DESATIVADO COM SUCESSO!\033[1;37m"
+            echo -e "\033[1;32mBADVPN DISABLED SUCCESSFULLY! / BADVPN ကို အောင်မြင်စွာ ပိတ်ပြီးပါပြီ!\033[1;37m"
             sleep 3
 	    clear
             fun_badvpn
@@ -71,7 +71,7 @@ echo -e "\033[1;37m━━━━━━━━━━━━━━━━━━━━�
             inst_udp
             fun_udpon
             echo ""
-            echo -e "\033[1;32mBADVPN ATIVADO COM SUCESSO\033[1;37m"
+            echo -e "\033[1;32mBADVPN ENABLED SUCCESSFULLY / BADVPN ကို အောင်မြင်စွာ ဖွင့်ပြီးပါပြီ\033[1;37m"
             sleep 3
 	    clear
             fun_badvpn

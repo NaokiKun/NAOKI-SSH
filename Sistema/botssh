@@ -4,7 +4,7 @@ clear
 source ShellBot.sh
 touch lista
 [[ -z $1 ]] && {
-    clear && echo "INFORME O TOKEN" && return 0
+    clear && echo \"ENTER THE TOKEN / Token ထည့်ပါ\" && return 0
 }
 [[ ! -e RESET ]] && touch RESET
 api_bot=$1
@@ -17,7 +17,7 @@ menu() {
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
         msg+="<b>🤖 OLA SEJA BEM VINDO(a) 🤖</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="Gere seu teste agora mesmo!"
+        msg+="Generate your test right now! / အခုချက်ချင်း သင့်စမ်းသပ်မှုကို ဖန်တီးပါ!"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e $msg)" \
         --reply_markup "$keyboard1" \
@@ -60,7 +60,7 @@ rm -rf /etc/SSHPlus/userteste/$usuario.sh" > /etc/SSHPlus/userteste/$usuario.sh
 #enviar app
 enviarapp() {
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-        --text "♻️ ENVIANDO APLICATIVO, AGUARDE..."
+        --text "♻️ SENDING APPLICATION, PLEASE WAIT... / အက်ပလီကေးရှင်း ပို့နေပါတယ်၊ ခဏစောင့်ပါ..."
     ShellBot.sendDocument --chat_id ${callback_query_message_chat_id} \
         --document "@/root/app.apk" \
     return 0
@@ -78,7 +78,7 @@ infouser () {
 
 unset botao1
 botao1=''
-ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text '♻️ GERAR TESTE ♻️' --callback_data 'gerarssh'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text '♻️ GENERATE TEST / စမ်းသပ်မှုဖန်တီးရန် ♻️' --callback_data 'gerarssh'
 ShellBot.InlineKeyboardButton --button 'botao1' --line 3 --text '🔰 BAIXAR APLICATIVO 🔰' --callback_data 'appenviar'
 ShellBot.regHandleFunction --function criarteste --callback_data gerarssh
 ShellBot.regHandleFunction --function enviarapp --callback_data appenviar
@@ -86,8 +86,8 @@ unset keyboard1
 keyboard1="$(ShellBot.InlineKeyboardMarkup -b 'botao1')"
 while :; do
    [[ "$(date +%d)" != "$(cat RESET)" ]] && {
-   	echo $(date +%d) > RESET
-   	echo ' ' > lista
+	echo $(date +%d) > RESET
+	echo ' ' > lista
    }
   ShellBot.getUpdates --limit 100 --offset $(ShellBot.OffsetNext) --timeout 24
   for id in $(ShellBot.ListUpdates); do

@@ -103,7 +103,7 @@ fun_bar() {
 }
 fun_edithost() {
     clear
-    echo -e "\E[44;1;37m          ALTERAR HOST OVPN            \E[0m"
+    echo -e "\E[44;1;37m          CHANGE OVPN HOST / OVPN HOST ပြောင်းရန်            \E[0m"
     echo ""
     echo -e "\033[1;33mHOST EM USO\033[1;37m: \033[1;32m$Host"
     echo ""
@@ -127,67 +127,67 @@ fun_edithost() {
     if [[ "$respo" = '1' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost() {
-        	sed -i "7,9"d $cert01
-        	sleep 1
-        	sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo1\nhttp-proxy $IP 80" $cert01
+	sed -i "7,9"d $cert01
+	sleep 1
+	sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo1\nhttp-proxy $IP 80" $cert01
         }
         fun_bar 'fun_althost'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         fun_geraovpn
         sleep 1.5
     elif [[ "$respo" = '2' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost2() {
             sed -i "7,9"d $cert01
-        	sleep 1
-        	sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo3\nhttp-proxy $IP 80" $cert01
+	sleep 1
+	sed -i "7i\remote $rmt2 $_Port\nhttp-proxy-option CUSTOM-HEADER Host $vivo3\nhttp-proxy $IP 80" $cert01
         }
         fun_bar 'fun_althost2'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         fun_geraovpn
         sleep 1.5
     elif [[ "$respo" = '3' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althostpay1() {
-        	sed -i "7,9"d $cert01
-        	sleep 1
-        	sed -i "7i\remote $rmt2 $_Port\n$payload1\nhttp-proxy $IP 8080" $cert01
+	sed -i "7,9"d $cert01
+	sleep 1
+	sed -i "7i\remote $rmt2 $_Port\n$payload1\nhttp-proxy $IP 8080" $cert01
         }
         fun_bar 'fun_althostpay1'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         fun_geraovpn
         sleep 1.5
     elif [[ "$respo" = '4' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althostpay2() {
             sed -i "7,9"d $cert01
-        	sleep 1
-        	sed -i "7i\remote $rmt2 $_Port\n$payload2\nhttp-proxy $IP 80" $cert01
+	sleep 1
+	sed -i "7i\remote $rmt2 $_Port\n$payload2\nhttp-proxy $IP 80" $cert01
         }
         fun_bar 'fun_althostpay2'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         fun_geraovpn
         sleep 1.5
     elif [[ "$respo" = '5' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost5() {
-        	sed -i "7,9"d $cert01
-        	sleep 1
-        	sed -i "7i\remote $rmt3\nhttp-proxy-option CUSTOM-HEADER Host $vivo3\nhttp-proxy $prx:$_Port" $cert01
+	sed -i "7,9"d $cert01
+	sleep 1
+	sed -i "7i\remote $rmt3\nhttp-proxy-option CUSTOM-HEADER Host $vivo3\nhttp-proxy $prx:$_Port" $cert01
         }
         fun_bar 'fun_althost5'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         fun_geraovpn
         sleep 1.5
     elif [[ "$respo" = '6' ]]; then
         echo -e "\n\033[1;32mALTERANDO HOST!\033[0m\n"
         fun_althost6() {
-        	sed -i "7,9"d $cert01
-        	sleep 1
-        	sed -i "7i\remote $IP $_Port\nroute $IP 255.255.255.255 net_gateway\nhttp-proxy 127.0.0.1 8989" $cert01
+	sed -i "7,9"d $cert01
+	sleep 1
+	sed -i "7i\remote $IP $_Port\nroute $IP 255.255.255.255 net_gateway\nhttp-proxy 127.0.0.1 8989" $cert01
         }
         fun_bar 'fun_althost6'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         fun_geraovpn
         sleep 1.5
     elif [[ "$respo" = '7' ]]; then
@@ -223,7 +223,7 @@ fun_edithost() {
             cd $HOME && rm -rf /root/OVPN >/dev/null 2>&1
         }
         fun_bar 'fun_packhost'
-        echo -e "\n\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+        echo -e "\n\033[1;32mHOST CHANGED SUCCESSFULLY! / HOST ကို အောင်မြင်စွာ ပြောင်းပြီးပါပြီ!\033[0m"
         sleep 1.5
     elif [[ "$respo" = '8' ]]; then
         echo ""
@@ -251,59 +251,59 @@ fun_edithost() {
     fi
 }
 [[ ! -e /usr/lib/sshplus ]] && exit 0
-tput setaf 7;tput setab 4;tput bold;printf '%30s%s%-15s\n' "CRIAR USUÁRIO SSH";tput sgr0
+tput setaf 7;tput setab 4;tput bold;printf '%30s%s%-15s\n' "CREATE SSH USER / SSH အသုံးပြုသူ ဖန်တီးရန်";tput sgr0
 #echo -ne "\033[1;32m📝 NOME:\033[1;37m ";read namee
 #[[ -z $namee ]] && {
 #	echo -e "\n${cor1}Nome vazio ou invalido!${scor}\n"
 #	exit 1
 #}
-echo -ne "\033[1;32m🗣️ USUÁRIO:\033[1;37m ";read username
+echo -ne "\033[1;32m🗣️ USER / အသုံးပြုသူ:\033[1;37m ";read username
 [[ -z $username ]] && {
-	echo -e "\n${cor1}usuário vazio ou invalido!${scor}\n"
+	echo -e "\n${cor1}Empty or invalid user! / အသုံးပြုသူ ဗလာ သို့မဟုတ် မမှန်ကန်ပါ${scor}\n"
 	exit 1
 }
 [[ "$(grep -wc $username /etc/passwd)" != '0' ]] && {
-	echo -e "\n${cor1}Este usuário já existe. tente outro nome!${scor}\n"
+	echo -e "\n${cor1}This user already exists. Try another name! / ဒီ အသုံးပြုသူ ရှိပြီးသား။ အမည် වෙනတစ်ခု သုံးပါ${scor}\n"
 	exit 1
 }
 sizemin=$(echo ${#username})
 [[ $sizemin -lt 2 ]] && {
-	echo -e "\n${cor1}Você digitou um nome de usuário muito curto${scor}"
+	echo -e "\n${cor1}You entered a username that is too short / အသုံးပြုသူ အမည် က အလွန်တိုတောင်းသည်${scor}"
 	echo -e "${cor1}use no mínimo dois caracteres!${scor}\n"
 	exit 1
 }
 sizemax=$(echo ${#username})
 [[ $sizemax -gt 25 ]] && {
-	echo -e "\n${cor1}Você digitou um nome de usuário muito grande"
+	echo -e "\n${cor1}You entered a username that is too long / အသုံးပြုသူ အမည် ကြီးလွန်နေသည်"
 	echo -e "${cor1}use no máximo 25 caracteres!${scor}\n"
 	exit 1
 }
-echo -ne "\033[1;32m🔑 SENHA:\033[1;37m ";read password
+echo -ne "\033[1;32m🔑 PASSWORD / စကားဝှက်:\033[1;37m ";read password
 [[ -z $password ]] && {
-	echo -e "\n${cor1}Senha vazia ou invalida!${scor}\n"
+	echo -e "\n${cor1}Empty or invalid password! / စကားဝှက် ဗလာ သို့မဟုတ် မမှန်ကန်ပါ${scor}\n"
 	exit 1
 }
 sizepass=$(echo ${#password})
 [[ $sizepass -lt 4 ]] && {
-	echo -e "\n${cor1}Senha curta!, use no mínimo 4 caracteres${scor}\n"
+	echo -e "\n${cor1}Password too short! Use at least 4 characters / စကားဝှက် လျှော့နည်းသည်! အနည်းဆုံး အက္ခရာ 4 လုံးအသုံးပြုပါ${scor}\n"
 	exit 1
 }
-echo -ne "\033[1;32m⌛ DIAS PARA EXPIRA:\033[1;37m ";read dias
+echo -ne "\033[1;32m⌛ DAYS TO EXPIRE / ကာလကုန်ရန် ရက်များ:\033[1;37m ";read dias
 [[ -z $dias ]] && {
-	echo -e "\n${cor1}Numero de dias vazio!${scor}\n"
+	echo -e "\n${cor1}Number of days is empty! / ရက်ပမာဏ ဗလာ ကျန်သည်${scor}\n"
 	exit 1
 }
 [[ ${dias} != ?(+|-)+([0-9]) ]] && {
-	echo -e "\n${cor1}Você digitou um número de dias inválido!${scor}\n"
+	echo -e "\n${cor1}You entered an invalid number of days! / မမှန်ကန်သော ရက် အရေအတွက် ထည့်သွင်းလိုက်သည်${scor}\n"
 	exit 1
 }
 [[ $dias -lt 1 ]] && {
 	echo -e "\n${cor1}O número deve ser maior que zero!${scor}\n"
 	exit 1
 }
-echo -ne "\033[1;32m📲 LIMITE DE CONEXÕES:\033[1;37m ";read sshlimiter
+echo -ne "\033[1;32m📲 CONNECTION LIMIT / ချိတ်ဆက်မှု အကန့်အသတ်:\033[1;37m ";read sshlimiter
 [[ -z $sshlimiter ]] && {
-	echo -e "\n${cor1}Você deixou o limite de conexões vazio!${scor}\n"
+	echo -e "\n${cor1}You left the connection limit empty! / ချိတ်ဆက်မှု အကန့်အသတ် ကို ဗလာ ထားလိုက်သည်${scor}\n"
 	exit 1
 }
 [[ ${sshlimiter} != ?(+|-)+([0-9]) ]] && {
@@ -314,9 +314,9 @@ echo -ne "\033[1;32m📲 LIMITE DE CONEXÕES:\033[1;37m ";read sshlimiter
 	echo -e "\n${cor1}Número de conexões simultâneas deve ser maior que zero!${scor}\n"
 	exit 1
 }
-echo -ne "\033[1;32m💲 VALOR:\033[1;37m ";read vl
+echo -ne "\033[1;32m💲 PRICE / စျေးနှုန်း:\033[1;37m ";read vl
 [[ -z $vl ]] && {
-	echo -e "\n${cor1}Valor vazio ou invalido!${scor}\n"
+	echo -e "\n${cor1}Price empty or invalid! / စျေးနှုန်း ဗလာ သို့မဟုတ် မမှန်ကန်ပါ${scor}\n"
 	exit 1
 }
 final=$(date "+%Y-%m-%d" -d "+$dias days")
@@ -347,12 +347,12 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 		}
 		clear
 		#echo -e "\033[1;32m 📝NOME: \033[1;37m$nomee"
-		echo -e "\E[44;1;37m======🦸DADOS DE ACESSO🦸‍♀️======\E[0m"
-		echo -e "\033[1;32m 🗣️USUARIO: \033[1;37m$username"
-		echo -e "\033[1;32m 🔑SENHA: \033[1;37m$password"
-		echo -e "\033[1;32m ⌛EXPIRA EM: \033[1;37m$gui"
-		echo -e "\033[1;32m 📲LIMITE DE CONEXÃO: \033[1;37m$sshlimiter"
-                echo -e "\033[1;32m 💲VALOR: \033[1;37m$vl"
+		echo -e "\E[44;1;37m======🦸ACCESS DETAILS / အသုံးပြုခွင့် အချက်အလက်🦸‍♀️======\E[0m"
+		echo -e "\033[1;32m 🗣️USER: / အသုံးပြုသူ: \033[1;37m$username"
+		echo -e "\033[1;32m 🔑PASSWORD: / စကားဝှက်: \033[1;37m$password"
+		echo -e "\033[1;32m ⌛EXPIRES ON / သက်တမ်းကုန်ဆုံးသည်: \033[1;37m$gui"
+		echo -e "\033[1;32m 📲CONNECTION LIMIT: / ချိတ်ဆက်မှု အကန့်အသတ်: \033[1;37m$sshlimiter"
+                echo -e "\033[1;32m 💲PRICE: / စျေးနှုန်း: \033[1;37m$vl"
 		sleep 1
 		function aguarde() {
 			helice() {
@@ -388,22 +388,22 @@ echo "$username $sshlimiter" >>/root/usuarios.db
 	} || {
 		clear
 		#echo -e "\033[1;32m 📝NOME: \033[1;37m$nomee"
-		echo -e "\E[44;1;37m======🦸DADOS DE ACESSO🦸‍♀️======\E[0m"
-		echo -e "\033[1;32m 🗣️USUARIO: \033[1;37m$username"
-		echo -e "\033[1;32m 🔑SENHA: \033[1;37m$password"
-		echo -e "\033[1;32m ⌛EXPIRA EM: \033[1;37m$gui"
-		echo -e "\033[1;32m 📲LIMITE DE CONEXÃO: \033[1;37m$sshlimiter"
-                echo -e "\033[1;32m 💲VALOR: \033[1;37m$vl"
+		echo -e "\E[44;1;37m======🦸ACCESS DETAILS / အသုံးပြုခွင့် အချက်အလက်🦸‍♀️======\E[0m"
+		echo -e "\033[1;32m 🗣️USER: / အသုံးပြုသူ: \033[1;37m$username"
+		echo -e "\033[1;32m 🔑PASSWORD: / စကားဝှက်: \033[1;37m$password"
+		echo -e "\033[1;32m ⌛EXPIRES ON / သက်တမ်းကုန်ဆုံးသည်: \033[1;37m$gui"
+		echo -e "\033[1;32m 📲CONNECTION LIMIT: / ချိတ်ဆက်မှု အကန့်အသတ်: \033[1;37m$sshlimiter"
+                echo -e "\033[1;32m 💲PRICE: / စျေးနှုန်း: \033[1;37m$vl"
 echo -ne "\n\033[1;33mENTER \033[1;33mPARA VOLTAR AO \033[1;33mMENU!\033[0m"; read
 	}
 } || {
 	clear
 		#echo -e "\033[1;32m 📝NOME: \033[1;37m$nomee"
-		echo -e "\E[44;1;37m======🦸DADOS DE ACESSO🦸‍♀️======\E[0m"
-		echo -e "\033[1;32m 🗣️USUARIO: \033[1;37m$username"
-		echo -e "\033[1;32m 🔑SENHA: \033[1;37m$password"
-		echo -e "\033[1;32m ⌛EXPIRA EM: \033[1;37m$gui"
-		echo -e "\033[1;32m 📲LIMITE DE CONEXÃO: \033[1;37m$sshlimiter"
-                echo -e "\033[1;32m 💲VALOR: \033[1;37m$vl"
+		echo -e "\E[44;1;37m======🦸ACCESS DETAILS / အသုံးပြုခွင့် အချက်အလက်🦸‍♀️======\E[0m"
+		echo -e "\033[1;32m 🗣️USER: / အသုံးပြုသူ: \033[1;37m$username"
+		echo -e "\033[1;32m 🔑PASSWORD: / စကားဝှက်: \033[1;37m$password"
+		echo -e "\033[1;32m ⌛EXPIRES ON / သက်တမ်းကုန်ဆုံးသည်: \033[1;37m$gui"
+		echo -e "\033[1;32m 📲CONNECTION LIMIT: / ချိတ်ဆက်မှု အကန့်အသတ်: \033[1;37m$sshlimiter"
+                echo -e "\033[1;32m 💲PRICE: / စျေးနှုန်း: \033[1;37m$vl"
 echo -ne "\n\033[1;33mENTER \033[1;33mPARA VOLTAR AO \033[1;33mMENU!\033[0m"; read
 }

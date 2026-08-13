@@ -25,7 +25,7 @@ fun_menu() {
 env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         env_msg+="<b>        NAOKI SSH</b>\n"
         env_msg+="╚═══════•⊱✦⊰•═══════╝\n\n"
-        env_msg+="⚠️ <i>SELECIONE UMA OPCAO ABAIXO !</i>\n\n"
+        env_msg+="⚠️ <i>SELECT AN OPTION BELOW! / အောက်တွင် ရွေးချယ်မှုကို ရွေးပါ!</i>\n\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard1" \
             --parse_mode html
@@ -41,7 +41,7 @@ env_msg="╔═══════•⊱✦⊰•═══════╗\n"
 env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         env_msg+="<b>        NAOKI SSH</b>\n"
         env_msg+="╚═══════•⊱✦⊰•═══════╝\n\n"
-        env_msg+="⚠️ <i>SELECIONE UMA OPCAO ABAIXO !</i>\n\n"
+        env_msg+="⚠️ <i>SELECT AN OPTION BELOW! / အောက်တွင် ရွေးချယ်မှုကို ရွေးပါ!</i>\n\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard2" \
             --parse_mode html
@@ -51,14 +51,14 @@ env_msg="╔═══════•⊱✦⊰•═══════╗\n"
 env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         env_msg+="<b>        NAOKI SSH</b>\n"
         env_msg+="╚═══════•⊱✦⊰•═══════╝\n\n"
-        env_msg+="⚠️ <i>SELECIONE UMA OPCAO ABAIXO !</i>\n\n"
+        env_msg+="⚠️ <i>SELECT AN OPTION BELOW! / အောက်တွင် ရွေးချယ်မှုကို ရွေးပါ!</i>\n\n"
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard3" \
             --parse_mode html
         return 0
     else
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     fi
 }
@@ -77,27 +77,27 @@ env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         env_msg+="<b>        NAOKI SSH</b>\n"
         env_msg+="╚═══════•⊱✦⊰•═══════╝\n\n"
         env_msg+="⚠️ <i>Comandos Disponiveis</i>\n\n"
-        env_msg+="[<b>01</b>] /menu = Exibe menu\n"
+        env_msg+="[<b>01</b>] /menu = Display menu / မီနူးကို ပြရန်\n"
         env_msg+="[<b>02</b>] /info = Exibe informacoes\n"
         env_msg+="[<b>03</b>] /ajuda = Informacoes sobre opcoes\n\n"
         env_msg+="⚠️ <i>Opções Disponiveis</i>\n\n"
-        env_msg+="• <u>CRIAR USUARIO</u> = Cria usuario ssh\n\n"
-        env_msg+="• <u>CRIAR TESTE</u> = Cria teste ssh\n\n"
-        env_msg+="• <u>REMOVER</u> = Remove usuario ssh\n\n"
-        env_msg+="• <u>INFO USUARIOS</u> = Informacoes do usuario\n\n"
-        env_msg+="• <u>USUARIOS ONLINE</u> = Exibe Usuários onlines\n\n"
+        env_msg+="• <u>CREATE USER / အသုံးပြုသူ ဖန်တီးမည်</u> = Creates SSH user / SSH အသုံးပြုသူ ဖန်တီးသည်\n\n"
+        env_msg+="• <u>CREATE TEST / စမ်းသပ် အကောင့် ဖန်တီးမည်</u> = Creates SSH trial / SSH စမ်းသပ် အကောင့် ဖန်တီးသည်\n\n"
+        env_msg+="• <u>REMOVE / ဖျက်မည်</u> = Removes SSH user / SSH အသုံးပြုသူ ဖျက်သည်\n\n"
+        env_msg+="• <u>USER INFO / အသုံးပြုသူ အချက်အလက်</u> = User information / အသုံးပြုသူ အချက်အလက်များ\n\n"
+        env_msg+="• <u>ONLINE USERS / Online အသုံးပြုသူများ</u> = Exibe Usuários onlines\n\n"
         env_msg+="• <u>INFO VPS</u> = Informacoes do servidor\n\n"
-        env_msg+="• <u>ALTERAR SENHA</u> = Altera senha ssh\n\n"
-        env_msg+="• <u>ALTERAR LIMITE</u> = Altera limite ssh\n\n"
-        env_msg+="• <u>ALTERAR DATA</u> = Altera data ssh\n\n"
-        env_msg+="• <u>EXPIRADOS</u> = Remove ssh expirados\n\n"
-        env_msg+="• <u>BACKUP</u> = Cria Backup ssh e revendas\n\n"
+        env_msg+="• <u>CHANGE PASSWORD</u> = Change SSH password / စကားဝှက်ပြောင်းရန် = SSH စကားဝှက်ကိုပြောင်းသည်\n\n"
+        env_msg+="• <u>CHANGE LIMIT</u> = Change SSH limit / အကန့်အသတ်ပြောင်းရန် = SSH အကန့်အသတ်ကိုပြောင်းသည်\n\n"
+        env_msg+="• <u>CHANGE DATE</u> = Change SSH expiration date / ရက်စွဲပြောင်းရန် = SSH သက်တမ်းကိုပြောင်းသည်\n\n"
+        env_msg+="• <u>EXPIRED USERS / သက်တမ်းကုန် User များ</u> = Remove ssh expirados\n\n"
+        env_msg+="• <u>BACKUP</u> = Create SSH and resellers backup / Backup ဖန်တီးရန် = SSH နှင့် resellers များအတွက် backup ဖန်တီးသည်\n\n"
         env_msg+="• <u>OTIMIZAR</u> = Limpa o cache - ram\n\n"
-        env_msg+="• <u>SPEEDTESTE</u> = Teste de conexao\n\n"
+        env_msg+="• <u>SPEEDTEST</u> = Connection test / ချိတ်ဆက်မှု စမ်းသပ်ခြင်း\n\n"
         env_msg+="• <u>ARQUIVOS</u> = Hospeda Arquivos\n\n"
         env_msg+="• <u>REVENDAS</u> = Gerenciar Revendas\n\n"
-        env_msg+="• <u>AUTOBACKUP</u> = lig/Des Backup automatico\n\n"
-        env_msg+="• <u>RELATORIO</u> = Informacoes sobre revendas\n\n"
+        env_msg+="• <u>AUTOBACKUP</u> = Toggle automatic backup on/off / အလိုအလျောက် backup ဖွင့်/ပိတ်\n\n"
+        env_msg+="• <u>REPORT / အစီရင်ခံစာ</u> = Informacoes sobre revendas\n\n"
         env_msg+="• <u>AJUDA</u> = Informacoes sobre opcoes\n\n"
         ShellBot.sendMessage --chat_id $id_chatuser \
             --text "$(echo -e $env_msg)" \
@@ -113,21 +113,21 @@ env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         env_msg+="<b>        NAOKI SSH</b>\n"
         env_msg+="╚═══════•⊱✦⊰•═══════╝\n\n"
         env_msg+="⚠️ <i>Comandos Disponiveis</i>\n\n"
-        env_msg+="[<b>01</b>] /menu = Exibe menu\n"
+        env_msg+="[<b>01</b>] /menu = Show menu / မီနူးကိုပြသည်\n"
         env_msg+="[<b>02</b>] /info = Exibe informacoes\n"
         env_msg+="[<b>03</b>] /ajuda = Informacoes sobre opcoes\n\n"
         env_msg+="⚠️ <i>Opções Disponiveis</i>\n\n"
-        env_msg+="• <u>CRIAR USUARIO</u> = Cria usuario ssh\n\n"
-        env_msg+="• <u>CRIAR TESTE</u> = Cria teste ssh\n\n"
-        env_msg+="• <u>REMOVER</u> = Remove usuario ssh\n\n"
-        env_msg+="• <u>INFO USUARIOS</u> = Informacoes do usuario\n\n"
-        env_msg+="• <u>USUARIOS ONLINE</u> = Exibe Usuários onlines\n\n"
-        env_msg+="• <u>ALTERAR SENHA</u> = Altera senha ssh\n\n"
-        env_msg+="• <u>ALTERAR LIMITE</u> = Altera limite ssh\n\n"
-        env_msg+="• <u>ALTERAR DATA</u> = Altera data ssh\n\n"
-        env_msg+="• <u>EXPIRADOS</u> = Remove ssh expirados\n\n"
+        env_msg+="• <u>CREATE USER</u> = Create SSH user / အသုံးပြုသူ ဖန်တီးရန် = SSH အသုံးပြုသူ ဖန်တီးသည်\n\n"
+        env_msg+="• <u>CREATE TRIAL</u> = Create SSH trial account / စမ်းသပ်အကောင့် ဖန်တီးရန် = SSH စမ်းသပ်အကောင့် ဖန်တီးသည်\n\n"
+        env_msg+="• <u>REMOVE</u> = Remove SSH user / ဖယ်ရှားရန် = SSH အသုံးပြုသူကို ဖယ်ရှားသည်\n\n"
+        env_msg+="• <u>USER INFO</u> = User information / အသုံးပြုသူ အချက်အလက်\n\n"
+        env_msg+="• <u>USERS ONLINE</u> = Shows online users / အွန်လိုင်း အသုံးပြုသူများ ပြသသည်\n\n"
+        env_msg+="• <u>CHANGE PASSWORD</u> = Change SSH password / စကားဝှက်ပြောင်းရန် = SSH စကားဝှက်ကိုပြောင်းသည်\n\n"
+        env_msg+="• <u>CHANGE LIMIT</u> = Change SSH limit / အကန့်အသတ်ပြောင်းရန် = SSH အကန့်အသတ်ကိုပြောင်းသည်\n\n"
+        env_msg+="• <u>CHANGE DATE</u> = Change SSH expiration date / ရက်စွဲပြောင်းရန် = SSH သက်တမ်းကိုပြောင်းသည်\n\n"
+        env_msg+="• <u>EXPIRED USERS / သက်တမ်းကုန် User များ</u> = Remove ssh expirados\n\n"
         env_msg+="• <u>REVENDAS</u> = Gerenciar Revendas\n\n"
-        env_msg+="• <u>RELATORIO</u> = Informacoes sobre revendas\n\n"
+        env_msg+="• <u>REPORT / အစီရင်ခံစာ</u> = Informacoes sobre revendas\n\n"
         env_msg+="• <u>AJUDA</u> = Informacoes sobre opcoes\n\n"
         ShellBot.sendMessage --chat_id $id_chatuser \
             --text "$(echo -e $env_msg)" \
@@ -139,19 +139,19 @@ env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         env_msg+="<b>        NAOKI SSH</b>\n"
         env_msg+="╚═══════•⊱✦⊰•═══════╝\n\n"
         env_msg+="⚠️ <i>Comandos Disponiveis</i>\n\n"
-        env_msg+="[<b>01</b>] /menu = Exibe menu\n"
+        env_msg+="[<b>01</b>] /menu = Show menu / မီနူးကိုပြသည်\n"
         env_msg+="[<b>02</b>] /info = Exibe informacoes\n"
         env_msg+="[<b>03</b>] /ajuda = Informacoes sobre opcoes\n\n"
         env_msg+="⚠️ <i>Opções Disponiveis</i>\n\n"
-        env_msg+="• <u>CRIAR USUARIO</u> = Cria usuario ssh\n\n"
-        env_msg+="• <u>CRIAR TESTE</u> = Cria teste ssh\n\n"
-        env_msg+="• <u>REMOVER</u> = Remove usuario ssh\n\n"
-        env_msg+="• <u>INFO USUARIOS</u> = Informacoes do usuario\n\n"
-        env_msg+="• <u>USUARIOS ONLINE</u> = Exibe Usuários onlines\n\n"
-        env_msg+="• <u>ALTERAR SENHA</u> = Altera senha ssh\n\n"
-        env_msg+="• <u>ALTERAR LIMITE</u> = Altera limite ssh\n\n"
-        env_msg+="• <u>ALTERAR DATA</u> = Altera data ssh\n\n"
-        env_msg+="• <u>EXPIRADOS</u> = Remove ssh expirados\n\n"
+        env_msg+="• <u>CREATE USER</u> = Create SSH user / အသုံးပြုသူ ဖန်တီးရန် = SSH အသုံးပြုသူ ဖန်တီးသည်\n\n"
+        env_msg+="• <u>CREATE TRIAL</u> = Create SSH trial account / စမ်းသပ်အကောင့် ဖန်တီးရန် = SSH စမ်းသပ်အကောင့် ဖန်တီးသည်\n\n"
+        env_msg+="• <u>REMOVE</u> = Remove SSH user / ဖယ်ရှားရန် = SSH အသုံးပြုသူကို ဖယ်ရှားသည်\n\n"
+        env_msg+="• <u>USER INFO</u> = User information / အသုံးပြုသူ အချက်အလက်\n\n"
+        env_msg+="• <u>USERS ONLINE</u> = Shows online users / အွန်လိုင်းအသုံးပြုသူများကို ပြသည်\n\n"
+        env_msg+="• <u>CHANGE PASSWORD</u> = Change ssh password / SSH စကားဝှက် ပြောင်းသည်\n\n"
+        env_msg+="• <u>CHANGE LIMIT</u> = Change ssh limit / SSH အကန့်အသတ် ပြောင်းသည်\n\n"
+        env_msg+="• <u>CHANGE DATE</u> = Change ssh expiry date / SSH သက်တမ်း ပြောင်းသည်\n\n"
+        env_msg+="• <u>EXPIRED USERS / သက်တမ်းကုန် User များ</u> = Remove ssh expirados\n\n"
         env_msg+="• <u>AJUDA</u> = Informacoes sobre opcoes\n\n"
         ShellBot.sendMessage --chat_id $id_chatuser \
             --text "$(echo -e $env_msg)" \
@@ -159,7 +159,7 @@ env_msg="╔═══════•⊱✦⊰•═══════╗\n"
         return 0
     else
         ShellBot.sendMessage --chat_id $id_chatuser \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     fi
 }
@@ -181,11 +181,11 @@ fun_adduser() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "👤 CRIAR USUARIO 👤\n\nNome do usuario:" \
+            --text "👤 CREATE USER / အသုံးပြုသူ ဖန်တီးရန် 👤\n\nUsername: / အသုံးပြုသူနာမည်:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -217,7 +217,7 @@ criar_user() {
         (echo "${senha}";echo "${senha}") | passwd "${usuario}"
     else
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                --text "$(echo -e "❌ ERRO AO CRIAR USUARIO ❌")" \
+                --text "$(echo -e "❌ ERRO AO CREATE USER / User ဖန်တီးရန် ❌")" \
                 --parse_mode html
         return 0
     fi
@@ -232,7 +232,7 @@ criar_user() {
         ./easyrsa build-client-full $usuario nopass
         newclient "$usuario"
     }
-    echo "usuario $usuario $validade $senha criado"
+    echo "user $usuario $validade $senha created / အသုံးပြုသူ $usuario $validade $senha ဖန်တီးပြီးပါပြီ"
 }
 
 fun_deluser() {
@@ -243,11 +243,11 @@ fun_deluser() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "🗑 REMOVER USUARIO 🗑\n\nNome do usuario:" \
+            --text "🗑 REMOVE USER / အသုံးပြုသူ ဖယ်ရှားရန် 🗑\n\nUsername: / အသုံးပြုသူနာမည်:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -302,11 +302,11 @@ alterar_senha() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "🔐 Alterar Senha 🔐\n\nNome do usuario:" \
+            --text "🔐 Change Password / စကားဝှက် ပြောင်းရန် 🔐\n\nUsername: / အသုံးပြုသူနာမည်:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -314,8 +314,8 @@ alterar_senha() {
 alterar_senha_user() {
     usuario=$1
     senha=$2
-    echo "$usuario:$senha" | chpasswd
-    echo "$senha" >/etc/SSHPlus/senha/$usuario
+    echo \"$usuario:$senha\" | chpasswd
+    echo \"$senha\" >/etc/SSHPlus/senha/$usuario
     [[ -e /etc/bot/revenda/${message_from_username}/usuarios/$usuario ]] && {
         senha2=$(cat /etc/bot/revenda/${message_from_username}/usuarios/$usuario | awk -F : {'print $2'})
         sed -i "/$usuario/ s/\b$senha2\b/$senha/g" /etc/bot/revenda/${message_from_username}/usuarios/$usuario
@@ -332,11 +332,11 @@ alterar_limite() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "👥 Alterar Limite 👥\n\nNome do usuario:" \
+            --text "👥 Change Limit / အကန့်အသတ် ပြောင်းရန် 👥\n\nUsername: / အသုံးပြုသူနာမည်:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -362,7 +362,7 @@ alterar_limite_user() {
         _limTotal=$(grep -w 'LIMITE_REVENDA' /etc/bot/revenda/${message_from_username}/${message_from_username} | awk '{print $NF}')
         [[ "$limite" -gt "$_limTotal" ]] && {
             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                --text "$(echo -e "❌ VC NAO TEM LIMITE SUFICIENTE ❌\n\nLimite Atual: $_limTotal ")" \
+                --text "$(echo -e "❌ YOU DO NOT HAVE ENOUGH LIMIT / သင့်တွင် လုံလောက်သော ကန့်သတ်ချက် မရှိပါ ❌\n\nCurrent Limit / လက်ရှိကန့်သတ်ချက်: $_limTotal ")" \
                 --parse_mode html
             _erro='1'
             return 0
@@ -374,7 +374,7 @@ alterar_limite_user() {
         [[ "$_limsomarev2" -gt "$_limTotal" ]] && {
             [[ "$_limTotal" == "$(($_limTotal - $_result))" ]] && _restant1='0' || _restant1=$(($_limTotal - $_result))
             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                --text "$(echo -e "❌ Vc nao tem limite suficiente\n\nLimite restante: $_restant1 ")" \
+                --text "$(echo -e "❌ Vc nao tem limite suficiente\n\nRemaining Limit / ကျန်ရှိသောကန့်သတ်ချက်: $_restant1 ")" \
                 --parse_mode html
             _erro='1'
             return 0
@@ -396,11 +396,11 @@ alterar_data() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "⏳ Alterar Data ⏳\n\nNome do usuario:" \
+            --text "⏳ Change Date ⏳ / ⏳ ရက်စွဲပြောင်းရန် ⏳\n\nUsername: / အသုံးပြုသူအမည်:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -440,7 +440,7 @@ ver_users() {
         arq_info=/tmp/$(echo $RANDOM)
         local info_users
         info_users='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n'
-        info_users+='<b>INFORMACOES DOS USUARIOS</b>\n'
+        info_users+='<b>USER INFORMATION / User အချက်အလက်</b>\n'
         info_users+='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n'
         info_users+='⚠️ Exibe no formato abaixo:\n\n'
         info_users+='<code>USUÁRIO SENHA LIMITE DATA</code>\n'
@@ -463,7 +463,7 @@ ver_users() {
                         data="Venceu"
                     } || {
                         dat="$(date -d"$datauser" '+%Y-%m-%d')"
-                        data=$(echo -e "$((($(date -ud $dat +%s) - $(date -ud $(date +%Y-%m-%d) +%s)) / 86400)) DIAS")
+                        data=$(echo -e "$((($(date -ud $dat +%s) - $(date -ud $(date +%Y-%m-%d) +%s)) / 86400)) DAYS / ရက်")
                     }
                 }
                 info+="$user • $senha • $limite • $data"
@@ -486,13 +486,13 @@ ver_users() {
         }
         [[ $(ls /etc/bot/revenda/${callback_query_from_username}/usuarios | wc -l) == '0' ]] && {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "VC AINDA NAO CRIOU USUARIO!"
+                --text "YOU HAVE NOT CREATED ANY USER YET! / သင်သည် မည်သည့် user ကိုမှ မဖန်တီးသေးပါ!"
             return 0
         }
         arq_info=/tmp/$(echo $RANDOM)
         local info_users
         info_users='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n'
-        info_users+='<b>INFORMACOES DOS USUARIOS</b>\n'
+        info_users+='<b>USER INFORMATION / User အချက်အလက်</b>\n'
         info_users+='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n'
         info_users+='⚠️ Exibe no formato abaixo:\n\n'
         info_users+='<code>USUÁRIO SENHA LIMITE DATA</code>\n'
@@ -515,7 +515,7 @@ ver_users() {
                         data="Venceu"
                     } || {
                         dat="$(date -d"$datauser" '+%Y-%m-%d')"
-                        data=$(echo -e "$((($(date -ud $dat +%s) - $(date -ud $(date +%Y-%m-%d) +%s)) / 86400)) DIAS")
+                        data=$(echo -e "$((($(date -ud $dat +%s) - $(date -ud $(date +%Y-%m-%d) +%s)) / 86400)) DAYS / ရက်")
                     }
                 }
                 info+="$user • $senha • $limite • $data"
@@ -532,7 +532,7 @@ ver_users() {
         done
     else
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     fi
 }
@@ -573,7 +573,7 @@ monitor_ssh() {
         cad_onli=/tmp/$(echo $RANDOM)
         local info_on
         info_on='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n'
-        info_on+='<b>MONITOR USUARIOS ONLINES</b>\n'
+        info_on+='<b>MONITOR ONLINE USERS / Online အသုံးပြုသူများS</b>\n'
         info_on+='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n'
         info_on+='⚠️ Exibe no formato abaixo:\n\n'
         info_on+='<code>USUÁRIO  ONLINE/LIMITE  TEMPO\n</code>'
@@ -611,7 +611,7 @@ monitor_ssh() {
             done
         } || {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "Nenhum usuario online" \
+                --text "No users online / အွန်လိုင်းရှိ user မရှိပါ" \
                 --parse_mode html
             return 0
         }
@@ -623,14 +623,14 @@ monitor_ssh() {
         }
         [[ $(ls /etc/bot/revenda/${callback_query_from_username}/usuarios | wc -l) == '0' ]] && {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "VC AINDA NAO CRIOU USUARIO!"
+                --text "YOU HAVE NOT CREATED ANY USER YET! / သင်သည် မည်သည့် user ကိုမှ မဖန်တီးသေးပါ!"
             return 0
         }
         database="/root/usuarios.db"
         cad_onli=/tmp/$(echo $RANDOM)
         local info_on
         info_on='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n'
-        info_on+='<b>MONITOR USUARIOS ONLINES</b>\n'
+        info_on+='<b>MONITOR ONLINE USERS / Online အသုံးပြုသူများS</b>\n'
         info_on+='=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n'
         info_on+='⚠️ Exibe no formato abaixo:\n\n'
         info_on+='<code>USUÁRIO  ONLINE/LIMITE  TEMPO\n</code>'
@@ -667,13 +667,13 @@ monitor_ssh() {
             done
         } || {
             ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-                --text "Nenhum usuario online" \
+                --text "No users online / အွန်လိုင်းရှိ user မရှိပါ" \
                 --parse_mode html
             return 0
         }
     else
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     fi
 }
@@ -689,7 +689,7 @@ fun_verif_user() {
     [[ "${message_from_id[$id]}" == "$id_admin" ]] && {
         [[ "$(awk -F : '$3 >= 1000 { print $1 }' /etc/passwd | grep -wc $user)" == '0' ]] && {
             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                --text "$(echo -e ❌ Usuario $user não existe !)" \
+                --text "$(echo -e ❌ Usuario $user does not exist / မရှိပါ !)" \
                 --parse_mode html
             _erro='1'
             return 0
@@ -698,7 +698,7 @@ fun_verif_user() {
     [[ -d /etc/bot/revenda/${message_from_username} ]] && {
         [[ ! -e /etc/bot/revenda/${message_from_username}/usuarios/$user ]] && {
             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                --text "$(echo -e ❌ Usuario $user nao existe !)" \
+                --text "$(echo -e ❌ Usuario $user does not exist / မရှိပါ !)" \
                 --parse_mode html
             _erro='1'
             return 0
@@ -709,19 +709,19 @@ fun_verif_user() {
 fun_down() {
     [[ "${callback_query_from_id[$id]}" != "$id_admin" ]] && {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
     [[ ! -d /tmp/file ]] && mkdir /tmp/file
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-        --text "[1] - ADICIONAR ARQUIVO\n[2] - EXCLUIR ARQUIVO\n\nInforme a opcao [1-2]:" \
+        --text "[1] - ADD FILE / ဖိုင် ထည့်ရန်\n[2] - DELETE FILE / ဖိုင် ဖျက်ရန်\n\nEnter option [1-2]: / ရွေးချယ်ပါ [1-2]:" \
         --reply_markup "$(ShellBot.ForceReply)"
 }
 
 infovps() {
     [[ "${callback_query_from_id[$id]}" != "$id_admin" ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     }
     PTs='/tmp/prts'
@@ -745,7 +745,7 @@ infovps() {
     [[ "$(netstat -nplt | grep 'python' | wc -l)" != '0' ]] && echo -e "Proxy Socks: $(netstat -nplt | grep 'python' | awk {'print $4'} | cut -d: -f2 | xargs)" >>$PTs
     local info
     info="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-    info+="<b>INFORMACOES DO SERVIDOR</b>\n"
+    info+="<b>INFORMATION / အချက်အလက် DO SERVIDOR</b>\n"
     info+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
     info+="<b>SISTEMA OPERACIONAL</b>\n"
     info+="$system\n\n"
@@ -758,7 +758,7 @@ infovps() {
     while read linha; do
         info+="<b>$(echo -e "$linha")</b>\n"
     done < <(cat $PTs)
-    info+="\n<b>$total</b><i> USUARIOS</i><b> $_on</b> <i>ONLINE</i>"
+    info+="\n<b>$total</b><i> USERS / အသုံးပြုသူများ</i><b> $_on</b> <i>ONLINE</i>"
     ShellBot.sendMessage --chat_id $id_admin \
         --text "$(echo -e $info)" \
         --parse_mode html
@@ -794,7 +794,7 @@ fun_download() {
     echo $_file2
     ShellBot.sendDocument --chat_id ${message_from_id[$id]} \
         --document "@/etc/bot/arquivos/$_file" \
-        --caption "$(echo -e "✅ CRIADO COM SUCESSO ✅\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $_file2)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $_file2)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $_file2)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $_file2)")" \
+        --caption "$(echo -e "✅ CREATED SUCCESSFULLY / အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ ✅\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $_file2)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $_file2)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $_file2)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $_file2)")" \
         --parse_mode html
     [[ -e "/root/$(awk -F " " '/Nome/ {print $2}' $_file2).ovpn" ]] && {
         ShellBot.sendDocument --chat_id ${message_from_id[$id]} \
@@ -805,7 +805,7 @@ fun_download() {
 otimizer() {
     [[ "${callback_query_from_id[$id]}" != "$id_admin" ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     }
     MEM1=$(free | awk '/Mem:/ {print int(100*$3/$2)}')
@@ -841,7 +841,7 @@ otimizer() {
 speed_test() {
     [[ "${callback_query_from_id[$id]}" != "$id_admin" ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     }
     rm -rf $HOME/speed >/dev/null 2>&1
@@ -872,16 +872,16 @@ speed_test() {
 backup_users() {
     [[ "${callback_query_from_id[$id]}" != "$id_admin" ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     }
     rm /root/backup.vps 1>/dev/null 2>/dev/null
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-        --text "♻️ CRIANDO BACKUP DE USUARIOS"
+        --text "♻️ CREATING USER BACKUP / သုံးစွဲသူများ၏ BACKUP ဖန်တီးနေသည်"
     tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/bot /etc/SSHPlus/senha 1>/dev/null 2>/dev/null
     ShellBot.sendDocument --chat_id ${id_admin} \
         --document "@/root/backup.vps" \
-        --caption "$(echo -e "♻️ BACKUP DE USUARIOS ♻️")"
+        --caption "$(echo -e "♻️ BACKUP DE USERS / အသုံးပြုသူများ ♻️")"
     return 0
 }
 
@@ -893,7 +893,7 @@ sobremim() {
     msg+="<b>Desenvolvido por:</b> @NAOKI_SSH\n"
     msg+="<b>Official Channel:</b> @NAOKI_SSH\n\n"
     msg+="Fui criado com o propósito de fornecer informações e ferramentas para gestão VPN em servidores 🐧 GNU/Linux 🐧.\n\n"
-    msg+="<b>Menu:</b> /menu\n"
+    msg+="<b>Menu / မီနူး:</b> /menu\n"
     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e $msg)" \
         --parse_mode html
@@ -907,7 +907,7 @@ fun_add_teste() {
         return 0
     elif [[ "${callback_query_from_id[$id]}" == "$id_admin" ]]; then
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "👤 CRIAR TESTE 👤\n\nQuantas horas deve durar EX: 1:" \
+            --text "👤 CREATE TEST 👤\n\nHow many hours should it last? EX: 1 / ဘယ်နှစ်နာရီ ကြာသင့်ပါသလဲ? ဥပမာ: 1" \
             --reply_markup "$(ShellBot.ForceReply)"
     elif [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]]; then
         _limTotal=$(grep -w "${callback_query_from_username}" $ativos | awk '{print $4}')
@@ -915,16 +915,16 @@ fun_add_teste() {
         _limsomarev2=$(echo "$_result + 1" | bc)
         [[ "$_limsomarev2" -gt "$_limTotal" ]] && {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "❌ VC NAO TEM LIMITE DISPONIVEL!"
+                --text "❌ YOU HAVE NO AVAILABLE LIMIT! / သင်တွင် အသုံးပြုရန် လက်ကျန် အကန့်အသတ် မရှိပါ!"
             return 0
         } || {
             ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-                --text "👤 CRIAR TESTE 👤\n\nQuantas horas deve durar EX: 1:" \
+                --text "👤 CREATE TEST 👤\n\nHow many hours should it last? EX: 1 / ဘယ်နှစ်နာရီ ကြာသင့်ပါသလဲ? ဥပမာ: 1" \
                 --reply_markup "$(ShellBot.ForceReply)"
         }
     else
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     fi
 }
@@ -1011,7 +1011,7 @@ fun_exp_user() {
             }
         done
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "⌛️ USUARIOS SSH EXPIRADOS REMOVIDOS"
+            --text "⌛️ EXPIRED SSH USERS REMOVED / ⌛️ သက်တမ်းပြုလွန်ထားသော SSH အသုံးပြုသူများ ဖယ်ရှားပြီးပါပြီ"
         return 0
     elif [[ "$(grep -wc "${callback_query_from_username}" $ativos)" != '0' ]]; then
         [[ "$(grep -wc ${callback_query_from_username} $suspensos)" != '0' ]] && {
@@ -1041,11 +1041,11 @@ fun_exp_user() {
             [[ -e "$dir_user/$user" ]] && rm $dir_user/$user
         done
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "⌛️ USUARIOS SSH EXPIRADOS REMOVIDOS"
+            --text "⌛️ EXPIRED SSH USERS REMOVED / ⌛️ သက်တမ်းပြုလွန်ထားသော SSH အသုံးပြုသူများ ဖယ်ရှားပြီးပါပြီ"
         return 0
     else
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "$(echo -e 🚫 ACESSO NEGADO 🚫)"
+            --text "$(echo -e 🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫)"
         return 0
     fi
 }
@@ -1063,10 +1063,10 @@ relatorio_rev() {
         _cont_revt=$(grep -wc revenda $ativos)
         local msg
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-        msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
+        msg+="<b>📊 REPORT / အစီရင်ခံစာ | INFORMATION / အချက်အလက်</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>Usuarios total:</b> $_tuser\n"
-        msg+="<b>Usuarios online:</b> $_onli\n"
+        msg+="<b>Total users / စုစုပေါင်း အသုံးပြုသူများ:</b> $_tuser\n"
+        msg+="<b>Online users / အွန်လိုင်း အသုံးပြုသူများ:</b> $_onli\n"
         msg+="<b>Revendas Ativas:</b> $_cont_rev\n"
         msg+="<b>Revendas Suspensas:</b> $_cont_sus\n"
         msg+="<b>Sub-Revendas:</b> $_cont_sub\n\n"
@@ -1074,13 +1074,13 @@ relatorio_rev() {
         msg+="<b>ID:</b> <code>${callback_query_from_id}</code>\n"
         [[ $_cont_revt != '0' ]] && {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "📊 CRIANDO RELATORIO !"
+                --text "📊 CRIANDO REPORT / အစီရင်ခံစာ !"
         } || {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "⚠️ NENHUM REVENDEDOR ENCONTRADO !"
+                --text "⚠️ NO RESELLER FOUND / Reseller မတွေ့ပါ !"
             return 0
         }
-        echo -e "RELATORIO DOS REVENDEDORES\n\nTotal: $_cont_revt  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio.txt
+        echo -e "REPORT / အစီရင်ခံစာ DOS REVENDEDORES\n\nTotal: $_cont_revt  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio.txt
         while read _revlist; do
             _nome_rev="$(echo $_revlist | awk '{print $2}')"
             _limite_rev="$(echo $_revlist | awk '{print $4}')"
@@ -1109,7 +1109,7 @@ relatorio_rev() {
                 total_on='0'
                 total_users='0'
             }
-            echo -e "\nSTATUS: $_status\nREVENDEDOR: @$_nome_rev\nLIMITE: $_limite_rev\nDIAS RESTANTES: $_data_rev\nSSH CRIADAS: $total_users\nSSH ONLINE: $total_on\nSUB-REVENDAS: $_subrev\n\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >>/tmp/Relatorio.txt
+            echo -e "\nSTATUS / အခြေအနေ: $_status\nRESELLER / ရောင်းချသူ: @$_nome_rev\nLIMIT / ကန့်သတ်ချက်: $_limite_rev\nDAYS LEFT / ကျန်သောရက်များ: $_data_rev\nSSH CREATED / ဖန်တီးထားသော SSH: $total_users\nSSH ONLINE / အွန်လိုင်း SSH: $total_on\nSUB-RESELLERS / အဝိုင်းခွဲရောင်းချသူများ: $_subrev\n\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >>/tmp/Relatorio.txt
         done <<<"$(grep -w 'revenda' $ativos)"
         ShellBot.sendDocument --chat_id $id_admin \
             --document "@/tmp/Relatorio.txt" \
@@ -1124,16 +1124,16 @@ relatorio_rev() {
         }
         [[ $(grep -wc 'SUBREVENDA' /etc/bot/revenda/${callback_query_from_username}/${callback_query_from_username}) == '0' ]] && {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "⚠️ NENHUM SUB REVENDEDOR ENCONTRADO !"
+                --text "⚠️ NO SUB-RESELLER FOUND / Sub-reseller မတွေ့ပါ !"
             _cont_limite=$(grep -w ${callback_query_from_username} $ativos | awk '{print $4}')
             fun_verif_limite_rev ${callback_query_from_username}
             _cont_disp=$(echo $_cont_limite - $_result | bc)
             local msg
             msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-            msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
+            msg+="<b>📊 REPORT / အစီရင်ခံစာ | INFORMATION / အချက်အလက်</b>\n"
             msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-            msg+="<b>Limite de Logins:</b> $_cont_limite\n"
-            msg+="<b>Limite Disponivel:</b> $_cont_disp\n"
+            msg+="<b>Login limit / လော့ဂ်အင် ကန့်သတ်ချက်:</b> $_cont_limite\n"
+            msg+="<b>Available limit / ရရှိနိုင်သော ကန့်သတ်ချက်:</b> $_cont_disp\n"
             ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
                 --text "$msg" \
                 --parse_mode html
@@ -1152,15 +1152,15 @@ relatorio_rev() {
         _cont_sup=$(fun_contsub | paste -s -d + | bc)
         local msg
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-        msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
+        msg+="<b>📊 REPORT / အစီရင်ခံစာ | INFORMATION / အချက်အလက်</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>Limite de Logins:</b> $_cont_limite\n"
-        msg+="<b>Limite Disponivel:</b> $_cont_disp\n"
+        msg+="<b>Login limit / လော့ဂ်အင် ကန့်သတ်ချက်:</b> $_cont_limite\n"
+        msg+="<b>Available limit / ရရှိနိုင်သော ကန့်သတ်ချက်:</b> $_cont_disp\n"
         msg+="<b>Sub-Revendas Total:</b> $_cont_atv\n"
         msg+="<b>Sub-Revendas Suspensas:</b> $_cont_sup\n"
         msg+="<b>User:</b> @${callback_query_from_username}\n"
         msg+="<b>ID:</b> <code>${callback_query_from_id}</code>\n"
-        echo -e "RELATORIO DOS SUB REVENDEDORES\n\nTotal: $_cont_atv  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio-${callback_query_from_username}.txt
+        echo -e "REPORT / အစီရင်ခံစာ DOS SUB REVENDEDORES\n\nTotal: $_cont_atv  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio-${callback_query_from_username}.txt
         while read _sublist; do
             _usub="$(echo $_sublist | awk '{print $2}')"
             _limit_sub=$(echo $_sublist | awk '{print $4}')
@@ -1188,7 +1188,7 @@ relatorio_rev() {
                 total_on='0'
                 total_users='0'
             }
-            echo -e "\nSTATUS: $_status\nSUB-REVENDEDOR: @$_usub\nLIMITE: $_limit_sub\nDIAS RESTANTES: $_data_sub\nSSH CRIADAS: $total_users\nSSH ONLINE: $total_on\n\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >>/tmp/Relatorio-${callback_query_from_username}.txt
+            echo -e "\nSTATUS / အခြေအနေ: $_status\nSUB-RESELLER / အဝိုင်းခွဲရောင်းချသူ: @$_usub\nLIMIT / ကန့်သတ်ချက်: $_limit_sub\nDAYS LEFT / ကျန်နေ့: $_data_sub\nSSH CREATED / ဖန်တီးထားသော SSH: $total_users\nSSH ONLINE / အွန်လိုင်း SSH: $total_on\n\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >>/tmp/Relatorio-${callback_query_from_username}.txt
         done <<<"$(grep -w 'SUBREVENDA' /etc/bot/revenda/${callback_query_from_username}/${callback_query_from_username})"
         ShellBot.sendDocument --chat_id ${callback_query_message_chat_id[$id]} \
             --document "@/tmp/Relatorio-${callback_query_from_username}.txt" \
@@ -1198,7 +1198,7 @@ relatorio_rev() {
     else
 
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     fi
 }
@@ -1213,13 +1213,13 @@ fun_backauto() {
             ) | crontab -
             s
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "♻️ BACKUP AUTOMATICO ATIVADO 🟢"
+                --text "♻️ AUTOMATIC BACKUP ENABLED / ♻️ မိတ္တူ အလိုအလောက် ဖွင့်ထားပါသည် 🟢"
             return 0
         } || {
             [[ $(crontab -l | grep -c "userbackup") != '0' ]] && crontab -l | grep -v 'userbackup' | crontab -
             [[ -d /etc/SSHPlus/backups ]] && rm -rf /etc/SSHPlus/backups
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "♻️ BACKUP AUTOMATICO DESATIVADO 🔴"
+                --text "♻️ AUTOMATIC BACKUP DISABLED / ♻️ မိတ္တူ အလိုအလောက် ပိတ်ထားပါသည် 🔴"
             return 0
         }
     }
@@ -1247,7 +1247,7 @@ restaure_backup() {
             }
             ShellBot.getFile --file_id $file_id
             if ShellBot.downloadFile --file_path "${return[file_path]}" --dir "/tmp"; then
-                msg='<b>♻️ ARQUIVO DE BACKUP ♻️</b>\n\n<i>O arquivo enviado é um arquivo\nde backup de usuários!</i>'
+                msg='<b>♻️ BACKUP FILE / မိတ္တူဖိုင် ♻️</b>\n\n<i>The sent file is a users backup file. / ပေးပို့သောဖိုင်သည် အသုံးပြုသူများ၏ backup ဖိုင်ဖြစ်သည်။</i>'
                 ShellBot.sendMessage --chat_id ${id_admin} \
                     --text "$(echo -e "$msg")" \
                     --parse_mode html
@@ -1262,7 +1262,7 @@ restaure_backup() {
 msg_bem_vindo() {
     local msg
     msg="✌️😃 Ola <b>${message_from_first_name[$id]}</b>\n\nBEM VINDO(a)\n\n"
-    msg+="Para acessar o menu\nclick ou execute [ /menu ]\n\n"
+    msg+="To access the menu / မီနူးကို ဝင်ရန်\nclick or run [ /menu ] / နှိပ်ပါ သို့မဟုတ် အကောင်အထည်ဖော်ပါ [ /menu ]\n\n"
     msg+="Para obter informacoes\nclick ou execute [ /ajuda ]\n\n"
     ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e $msg)" \
@@ -1316,7 +1316,7 @@ fun_add_revenda() {
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -1342,7 +1342,7 @@ criar_rev() {
     mkdir /etc/bot/revenda/"$u_rev"
     mkdir /etc/bot/revenda/"$u_rev"/usuarios
     touch /etc/bot/revenda/"$u_rev"/$u_rev
-    echo -e "USER: $u_rev LIMITE: $l_rev DIAS: $d_rev TIPO: $t_rev" >>$ativos
+    echo -e "USER / အသုံးပြုသူ: $u_rev LIMIT / ကန့်သတ်ချက်: $l_rev DAYS / ရက်များ: $d_rev TYPE / အမျိုးအစား: $t_rev" >>$ativos
     echo -e "=========================\nLIMITE_REVENDA: $l_rev\nDIAS_REVENDA: $d_rev\n=========================\n" >/etc/bot/revenda/"$u_rev"/$u_rev
     sed -i '$d' $file_rev
     echo -e "Vencimento: $(date "+%d/%m/%Y" -d "+$d_rev days")" >>$file_rev
@@ -1356,11 +1356,11 @@ fun_del_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "🗑 REMOVER REVENDEDOR 🗑\n\nInforme o user dele [Ex: @NAOKI_SSH]:" \
+            --text "🗑 REMOVE RESELLER 🗑\n\nEnter their user [Ex: @NAOKI_SSH]: / 🗑 RESELLER ဖယ်ရှားရန် 🗑\n\nသူတို့၏ user ကို ထည့်ပါ [ဥပမာ: @NAOKI_SSH]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -1474,11 +1474,11 @@ fun_lim_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "♾ ALTERAR LIMITE REVENDA ♾\n\nInforme o user dele [Ex: @NAOKI_SSH]:" \
+            --text "♾ CHANGE RESELLER LIMIT ♾\n\nEnter their user [Ex: @NAOKI_SSH]: / ♾ RESELLER အကန့်အသတ် ပြောင်းရန် ♾\n\nသူတို့၏ user ကို ထည့်ပါ [ဥပမာ: @NAOKI_SSH]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -1520,11 +1520,11 @@ fun_dat_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "📆 ALTERAR DATA REVENDA 📆\n\nInforme o user dele [Ex: @NAOKI_SSH]:" \
+            --text "📆 CHANGE RESELLER DATE 📆\n\nEnter their user [Ex: @NAOKI_SSH]: / 📆 RESELLER ရက်စွဲ ပြောင်းရန် 📆\n\nသူတို့၏ user ကို ထည့်ပါ [ဥပမာ: @NAOKI_SSH]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -1595,7 +1595,7 @@ fun_list_rev() {
             return 0
         } || {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "VC NAO TEM REVENDEDORES"
+                --text "YOU HAVE NO RESELLERS / သင်တွင် Reseller မရှိပါ"
             return 0
         }
     elif [[ "$(grep -w ${callback_query_from_username} $ativos | awk '{print $NF}')" == 'revenda' ]]; then
@@ -1614,12 +1614,12 @@ fun_list_rev() {
             return 0
         } || {
             ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-                --text "VC NAO TEM SUB REVENDEDORES"
+                --text "YOU HAVE NO SUB-RESELLERS / သင်တွင် Sub-reseller မရှိပါ"
             return 0
         }
     else
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     fi
 }
@@ -1632,11 +1632,11 @@ fun_susp_rev() {
     }
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.sendMessage --chat_id ${callback_query_message_chat_id[$id]} \
-            --text "🔒 SUSPENDER REVENDEDOR 🔒\n\nInforme o user dele [Ex: @NAOKI_SSH]:" \
+            --text "🔒 SUSPENDER REVENDEDOR 🔒\n\nEnter their user / သူ့ user ကို ထည့်ပါ [Ex: @NAOKI_SSH]:" \
             --reply_markup "$(ShellBot.ForceReply)"
     } || {
         ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
-            --text "🚫 ACESSO NEGADO 🚫"
+            --text "🚫 ACCESS DENIED / ဝင်ခွင့်မပြုပါ 🚫"
         return 0
     }
 }
@@ -1736,7 +1736,7 @@ fun_menurevenda() {
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.editMessageText --chat_id ${callback_query_message_chat_id[$id]} \
             --message_id ${callback_query_message_message_id[$id]} \
-            --text "SELECIONE UMA OPÇÃO ABAIXO:" \
+            --text "SELECT AN OPTION BELOW: / အောက်ပါ ရွေးချယ်စရာ တစ်ခုကို ရွေးပါ။" \
             --reply_markup "$(ShellBot.InlineKeyboardMarkup --button 'menu4')"
         return 0
     }
@@ -1745,23 +1745,23 @@ fun_menurevenda() {
 # LISTA MENU ADMIN
 unset menu1
 menu1=''
-ShellBot.InlineKeyboardButton --button 'menu1' --line 1 --text 'CRIAR USUARIO' --callback_data '_criaruser'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 2 --text 'CRIAR TESTE' --callback_data '_criarteste'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 3 --text 'REMOVER' --callback_data '_deluser'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 4 --text 'ALTERAR SENHA' --callback_data '_altsenha'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 5 --text 'ALTERAR LIMITE' --callback_data '_altlimite'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 6 --text 'ALTERAR DATA' --callback_data '_altdata'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 7 --text 'USUARIOS ONLINE' --callback_data '_monitor'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 8 --text 'INFO USUARIOS' --callback_data '_verusers'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 9 --text 'EXPIRADOS' --callback_data '_expirados'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 1 --text 'CREATE USER / အသုံးပြုသူ ဖန်တီးရန်' --callback_data '_criaruser'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 2 --text 'CREATE TRIAL / စမ်းသပ် အကောင့် ဖန်တီးရန်' --callback_data '_criarteste'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 3 --text 'REMOVE / ဖျက်ရန်' --callback_data '_deluser'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 4 --text 'CHANGE PASSWORD / စကားဝှက် ပြောင်းရန်' --callback_data '_altsenha'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 5 --text 'CHANGE LIMIT / အကန့်အသတ် ပြောင်းရန်' --callback_data '_altlimite'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 6 --text 'CHANGE DATE / ရက်စွဲ ပြောင်းရန်' --callback_data '_altdata'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 7 --text 'ONLINE USERS / အွန်လိုင်း အသုံးပြုသူများ' --callback_data '_monitor'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 8 --text 'USER INFO / အသုံးပြုသူ အချက်အလက်' --callback_data '_verusers'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 9 --text 'EXPIRED USERS / သက်တမ်းကုန် User များ' --callback_data '_expirados'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 1 --text 'INFO VPS' --callback_data '_infovps'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 2 --text 'OTIMIZAR' --callback_data '_otimizar'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 3 --text 'ARQUIVOS' --callback_data '_arqdown'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 4 --text 'REVENDA' --callback_data '_opcoesrev'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 5 --text 'SPEEDTESTE' --callback_data '_speedteste'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 6 --text 'BACKUP USUARIOS' --callback_data '_backupusers'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 6 --text 'BACKUP USERS / အသုံးပြုသူများ Backup' --callback_data '_backupusers'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 7 --text "ALTO BACKUP" --callback_data '_autobkp'
-ShellBot.InlineKeyboardButton --button 'menu1' --line 8 --text 'RELATORIO' --callback_data '_relatorio'
+ShellBot.InlineKeyboardButton --button 'menu1' --line 8 --text 'REPORT / အစီရင်ခံစာ' --callback_data '_relatorio'
 ShellBot.InlineKeyboardButton --button 'menu1' --line 9 --text 'AJUDA' --callback_data '_ajuda'
 ShellBot.regHandleFunction --function fun_adduser --callback_data _criaruser
 ShellBot.regHandleFunction --function fun_add_teste --callback_data _criarteste
@@ -1787,17 +1787,17 @@ keyboard1="$(ShellBot.InlineKeyboardMarkup -b 'menu1')"
 # LISTA MENU REVENDEDOR
 unset menu2
 menu2=''
-ShellBot.InlineKeyboardButton --button 'menu2' --line 1 --text 'CRIAR USUARIO' --callback_data '_criaruser2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 1 --text 'CRIAR TESTE' --callback_data '_criarteste2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'REMOVER' --callback_data '_deluser2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'USUARIOS ONLINE' --callback_data '_monitor2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 3 --text 'ALTERAR LIMITE' --callback_data '_altlimite2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 3 --text 'INFO USUARIOS' --callback_data '_verusers2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 4 --text 'ALTERAR SENHA' --callback_data '_altsenha2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 4 --text 'EXPIRADOS' --callback_data '_expirados2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 5 --text 'ALTERAR DATA' --callback_data '_altdata2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 1 --text 'CREATE USER / အသုံးပြုသူ ဖန်တီးရန်' --callback_data '_criaruser2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 1 --text 'CREATE TRIAL / စမ်းသပ် အကောင့် ဖန်တီးရန်' --callback_data '_criarteste2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'REMOVE / ဖျက်ရန်' --callback_data '_deluser2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 2 --text 'ONLINE USERS / အွန်လိုင်း အသုံးပြုသူများ' --callback_data '_monitor2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 3 --text 'CHANGE LIMIT / အကန့်အသတ် ပြောင်းရန်' --callback_data '_altlimite2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 3 --text 'USER INFO / အသုံးပြုသူ အချက်အလက်' --callback_data '_verusers2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 4 --text 'CHANGE PASSWORD / စကားဝှက် ပြောင်းရန်' --callback_data '_altsenha2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 4 --text 'EXPIRED USERS / သက်တမ်းကုန် User များ' --callback_data '_expirados2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 5 --text 'CHANGE DATE / ရက်စွဲ ပြောင်းရန်' --callback_data '_altdata2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 5 --text 'REVENDA' --callback_data '_opcoesrev2'
-ShellBot.InlineKeyboardButton --button 'menu2' --line 6 --text 'RELATORIO' --callback_data '_relatorio2'
+ShellBot.InlineKeyboardButton --button 'menu2' --line 6 --text 'REPORT / အစီရင်ခံစာ' --callback_data '_relatorio2'
 ShellBot.InlineKeyboardButton --button 'menu2' --line 6 --text 'AJUDA' --callback_data '_ajuda2'
 ShellBot.regHandleFunction --function fun_adduser --callback_data _criaruser2
 ShellBot.regHandleFunction --function fun_add_teste --callback_data _criarteste2
@@ -1817,15 +1817,15 @@ keyboard2="$(ShellBot.InlineKeyboardMarkup -b 'menu2')"
 #LISTA MUNU SUB REVENDEDOR
 unset menu3
 menu3=''
-ShellBot.InlineKeyboardButton --button 'menu3' --line 1 --text 'CRIAR USUARIO' --callback_data '_criaruser3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 1 --text 'CRIAR TESTE' --callback_data '_criarteste3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 2 --text 'REMOVER' --callback_data '_deluser3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 2 --text 'USUARIOS ONLINE' --callback_data '_monitor3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 3 --text 'ALTERAR LIMITE' --callback_data '_altlimite3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 3 --text 'INFO USUARIOS' --callback_data '_verusers3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 4 --text 'ALTERAR SENHA' --callback_data '_altsenha3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 4 --text 'EXPIRADOS' --callback_data '_expirados3'
-ShellBot.InlineKeyboardButton --button 'menu3' --line 5 --text 'ALTERAR DATA' --callback_data '_altdata3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 1 --text 'CREATE USER / အသုံးပြုသူ ဖန်တီးရန်' --callback_data '_criaruser3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 1 --text 'CREATE TEST / စမ်းသပ်မှု ဖန်တီးရန်' --callback_data '_criarteste3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 2 --text 'REMOVE / ဖျက်ရန်' --callback_data '_deluser3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 2 --text 'USERS ONLINE / အွန်လိုင်း အသုံးပြုသူများ' --callback_data '_monitor3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 3 --text 'CHANGE LIMIT / အကန့်အသတ် ပြောင်းရန်' --callback_data '_altlimite3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 3 --text 'USER INFO / အသုံးပြုသူ အချက်အလက်' --callback_data '_verusers3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 4 --text 'CHANGE PASSWORD / စကားဝှက် ပြောင်းရန်' --callback_data '_altsenha3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 4 --text 'EXPIRED USERS / သက်တမ်းကုန် User များ' --callback_data '_expirados3'
+ShellBot.InlineKeyboardButton --button 'menu3' --line 5 --text 'CHANGE DATE / သက်တမ်း ပြောင်းရန်' --callback_data '_altdata3'
 ShellBot.InlineKeyboardButton --button 'menu3' --line 5 --text 'AJUDA' --callback_data '_ajuda3'
 ShellBot.regHandleFunction --function fun_adduser --callback_data _criaruser3
 ShellBot.regHandleFunction --function fun_add_teste --callback_data _criarteste3
@@ -1844,9 +1844,9 @@ keyboard3="$(ShellBot.InlineKeyboardMarkup -b 'menu3')"
 unset menu4
 menu4=''
 ShellBot.InlineKeyboardButton --button 'menu4' --line 1 --text 'ADICIONAR REVENDA' --callback_data '_addrev'
-ShellBot.InlineKeyboardButton --button 'menu4' --line 2 --text 'REMOVER REVENDA' --callback_data '_delrev'
-ShellBot.InlineKeyboardButton --button 'menu4' --line 3 --text 'ALTERAR LIMITE REVENDA' --callback_data '_limrev'
-ShellBot.InlineKeyboardButton --button 'menu4' --line 4 --text 'ALTERAR DATA REVENDA' --callback_data '_datrev'
+ShellBot.InlineKeyboardButton --button 'menu4' --line 2 --text 'REMOVE RESELLER / RESELLER ဖျက်ရန်' --callback_data '_delrev'
+ShellBot.InlineKeyboardButton --button 'menu4' --line 3 --text 'CHANGE RESELLER LIMIT / RESELLER အကန့်အသတ် ပြောင်းရန်' --callback_data '_limrev'
+ShellBot.InlineKeyboardButton --button 'menu4' --line 4 --text 'CHANGE RESELLER DATE / RESELLER သက်တမ်း ပြောင်းရန်' --callback_data '_datrev'
 ShellBot.InlineKeyboardButton --button 'menu4' --line 5 --text 'LISTAR REVENDA' --callback_data '_listrev'
 ShellBot.InlineKeyboardButton --button 'menu4' --line 6 --text 'SUSPENDER REVENDA' --callback_data '_susprevendas'
 ShellBot.regHandleFunction --function fun_add_revenda --callback_data _addrev
@@ -1891,7 +1891,7 @@ while :; do
             if [[ ${message_reply_to_message_message_id[$id]} ]]; then
                 # Analisa a interface de resposta.
                 case ${message_reply_to_message_text[$id]} in
-                '👤 CRIAR USUARIO 👤\n\nNome do usuario:')
+                '👤 CREATE USER / User ဖန်တီးရန် 👤\n\nUser name / User အမည်:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     [[ "$(awk -F : '$3 >= 1000 { print $1 }' /etc/passwd | grep -w ${message_text[$id]} | wc -l)" != '0' ]] && {
@@ -1926,7 +1926,7 @@ while :; do
                     }
                     echo "Nome: ${message_text[$id]}" >$CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Senha:' \
+                        --text 'Password: / စကားဝှက်:' \
                         --reply_markup "$(ShellBot.ForceReply)" # Força a resposta.
                     ;;
                 'Senha:')
@@ -1940,10 +1940,10 @@ while :; do
                         >$CAD_ARQ
                         break
                     }
-                    echo "Senha: ${message_text[$id]}" >>$CAD_ARQ
+                    echo "Password / စကားဝှက်: ${message_text[$id]}" >>$CAD_ARQ
                     # Próximo campo.
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Limite:' \
+                        --text 'Limit: / အကန့်အသတ်:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
                 'Limite:')
@@ -1969,10 +1969,10 @@ while :; do
                             break
                         }
                     }
-                    echo "Limite: ${message_text[$id]}" >>$CAD_ARQ
+                    echo "Limit / ကန့်သတ်ချက်: ${message_text[$id]}" >>$CAD_ARQ
                     # Próximo campo.
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Validade em dias: ' \
+                        --text 'Validity in days: / သက်တမ်း (ရက်): ' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
 
@@ -1991,23 +1991,23 @@ while :; do
                     criar_user $CAD_ARQ
                     [[ "(grep -w ${message_text[$id]} /etc/passwd)" = '0' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e ❌ Erro ao criar usuario !)" \
+                            --text "$(echo -e ❌ Error creating user / User ဖန်တီးရာတွင် အမှား !)" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
                     }
                     [[ "$(ls /etc/bot/arquivos | wc -l)" != '0' ]] && {
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text '📥 ARQUIVOS DISPONIVEIS 📥\n\nDeseja baixar? Sim ou Nao?:' \
+                            --text '📥 FILES AVAILABLE 📥\n\nDownload? Yes or No?: / 📥 ဖိုင်များ ရနိုင်ပါသည်\n\nဒေါင်းလုတ်လုပ်မည်နည်း? ဟုတ်/မဟုတ်?:' \
                             --reply_markup "$(ShellBot.ForceReply)"
                     } || {
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text "<b>✅ CRIADO COM SUCESSO ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
+                            --text "<b>✅ CREATED SUCCESSFULLY / အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
                             --parse_mode html
                         break
                     }
                     ;;
-                '📥 ARQUIVOS DISPONIVEIS 📥\n\nDeseja baixar? Sim ou Nao?:')
+                '📥 AVAILABLE FILES / ရရှိနိုင်သော ဖိုင်များ 📥\n\nDownload? Yes or No? / Download လုပ်မလား? Yes သို့မဟုတ် No?:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     [[ ${message_text[$id]} != ?(+|-)+([A-Za-z]) ]] && {
@@ -2015,13 +2015,13 @@ while :; do
                             --text "$(echo -e "❌ Opcao Invalida ❌\n\n⚠️ Ultilize apenas letras [EX: sim ou nao]")" \
                             --parse_mode html
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text "<b>✅ CRIADO COM SUCESSO ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
+                            --text "<b>✅ CREATED SUCCESSFULLY / အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
                             --parse_mode html
                         break
                     }
                     [[ "${message_text[$id]}" = @(Sim|sim|SIM) ]] && {
                         msg_cli="≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n"
-                        msg_cli+="<b>ARQUIVOS PRE-CONFIGURADOS </b>❗\n"
+                        msg_cli+="<b>PRECONFIGURED FILES / ကြိုတင်ပြင်ဆင်ထားသော ဖိုင်များ </b>❗\n"
                         msg_cli+="≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠≠\n\n"
                         for _file in $(ls /etc/bot/arquivos); do
                             i=$(($i + 1))
@@ -2031,15 +2031,15 @@ while :; do
                             --text "$(echo -e "$msg_cli")" \
                             --parse_mode html
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text 'Informe o Numero do Arquivo:' \
+                            --text 'Enter the file number: / ဖိုင်နံပါတ် ထည့်ပါ:' \
                             --reply_markup "$(ShellBot.ForceReply)"
                     } || {
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text "<b>✅ CRIADO COM SUCESSO ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
+                            --text "<b>✅ CREATED SUCCESSFULLY / အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
                             --parse_mode html
                     }
                     ;;
-                'Informe o Numero do Arquivo:')
+                'Enter file number / ဖိုင်နံပါတ်ကို ထည့်ပါ:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     [[ ${message_text[$id]} != ?(+|-)+([0-9]) ]] && {
@@ -2047,7 +2047,7 @@ while :; do
                             --text "$(echo -e "❌ Opcao Invalida ❌ \n\n⚠️ Ultilize apenas numeros [EX: 1]")" \
                             --parse_mode html
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text "<b>✅ CRIADO COM SUCESSO ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
+                            --text "<b>✅ CREATED SUCCESSFULLY / အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ ✅</b>\n\nUSUARIO: <code>$(awk -F " " '/Nome/ {print $2}' $CAD_ARQ)</code>\nSENHA: <code>$(awk -F " " '/Senha/ {print $2}' $CAD_ARQ)</code>\nLIMITE: $(awk -F " " '/Limite/ {print $2}' $CAD_ARQ)\nEXPIRA EM: $(awk -F " " '/Validade/ {print $2}' $CAD_ARQ)" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
@@ -2057,16 +2057,16 @@ while :; do
                     >$CAD_ARQ
                     break
                     ;;
-                '🗑 REMOVER USUARIO 🗑\n\nNome do usuario:')
+                '🗑 REMOVE USER / User ဖျက်ရန် 🗑\n\nUser name / User အမည်:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     fun_del_user ${message_text[$id]}
                     [[ "$_erro" == '1' ]] && break
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text "✅ *Removido com sucesso.* 🚮" \
+                        --text "✅ *Removed successfully.* 🚮 / ✅ *ဖျက်ပြီးပါပြီ.* 🚮" \
                         --parse_mode markdown
                     ;;
-                '🔐 Alterar Senha 🔐\n\nNome do usuario:')
+                '🔐 Alterar Senha 🔐\n\nUser name / User အမည်:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     fun_verif_user ${message_text[$id]}
@@ -2074,7 +2074,7 @@ while :; do
                     [[ "$_erro" == '1' ]] && break
                     echo "${message_text[$id]}" >/tmp/name-s
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Nova senha:' \
+                        --text 'New password: / စကားဝှက်အသစ်:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
                 'Nova senha:')
@@ -2090,11 +2090,11 @@ while :; do
                     alterar_senha_user $(cat /tmp/name-s) ${message_text[$id]}
                     [[ "$_erro" == '1' ]] && break
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ SENHA ALTERADA !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n<b>Usuario:</b> $(cat /tmp/name-s)\n<b>Nova senha:</b> ${message_text[$id]}")" \
+                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ PASSWORD CHANGED / စကားဝှက် ပြောင်းပြီးပါပြီ !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n<b>Usuario:</b> $(cat /tmp/name-s)\n<b>Nova senha:</b> ${message_text[$id]}")" \
                         --parse_mode html
                     rm /tmp/name-s >/dev/null 2>&1
                     ;;
-                '👥 Alterar Limite 👥\n\nNome do usuario:')
+                '👥 Alterar Limite 👥\n\nUser name / User အမည်:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     echo $_erro segundo
@@ -2103,7 +2103,7 @@ while :; do
                     [[ "$_erro" == '1' ]] && break
                     echo "${message_text[$id]}" >/tmp/name-l
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Novo limite:' \
+                        --text 'New limit: / အကန့်အသတ် အသစ်:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
                 'Novo limite:')
@@ -2118,18 +2118,18 @@ while :; do
                     alterar_limite_user $(cat /tmp/name-l) ${message_text[$id]}
                     [[ "$_erro" == '1' ]] && break
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ LIMITE ALTERADO !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n<b>Usuario:</b> $(cat /tmp/name-l)\n<b>Novo Limite:</b> ${message_text[$id]}")" \
+                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ LIMIT CHANGED / ကန့်သတ်ချက် ပြောင်းပြီးပါပြီ !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n<b>Usuario:</b> $(cat /tmp/name-l)\n<b>Novo Limite:</b> ${message_text[$id]}")" \
                         --parse_mode html
                     rm /tmp/name-l >/dev/null 2>&1
                     ;;
-                '⏳ Alterar Data ⏳\n\nNome do usuario:')
+                '⏳ Alterar Data ⏳\n\nUser name / User အမည်:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     fun_verif_user ${message_text[$id]}
                     [[ "$_erro" == '1' ]] && break
                     echo "${message_text[$id]}" >/tmp/name-d
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'informe os dias ou data:' \
+                        --text 'Enter days or date: / ရက်များ သို့မဟုတ် ရက်စွဲ ထည့်ပါ:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
                 'informe os dias ou data:')
@@ -2148,7 +2148,7 @@ while :; do
                         --parse_mode html
                     rm /tmp/name-d >/dev/null 2>&1
                     ;;
-                '[1] - ADICIONAR ARQUIVO\n[2] - EXCLUIR ARQUIVO\n\nInforme a opcao [1-2]:')
+                '[1] - ADICIONAR ARQUIVO\n[2] - EXCLUIR ARQUIVO\n\nEnter the option / ရွေးချယ်မှုကို ထည့်ပါ [1-2]:')
                     [[ ${message_text[$id]} != ?(+|-)+([0-9]) ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
                             --text "$(echo -e "❌ Erro ! \n\n⚠️ Ultilize apenas numeros [EX: 1 ou 2]")" \
@@ -2157,7 +2157,7 @@ while :; do
                     }
                     if [[ "${message_text[$id]}" = '1' ]]; then
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                            --text "📤 HOSPEDAR ARQUIVOS 📤\n\nEnvie-me o arquivo:" \
+                            --text "📤 HOST FILES / ဖိုင်များကိုတင်ရန် 📤\n\nSend me the file: / ဖိုင်ကို ပို့ပေးပါ:" \
                             --reply_markup "$(ShellBot.ForceReply)"
                     elif [[ "${message_text[$id]}" = '2' ]]; then
                         [[ $(ls /etc/bot/arquivos | wc -l) != '0' ]] && {
@@ -2172,11 +2172,11 @@ while :; do
                                 --text "$(echo -e "$msg_cli1")" \
                                 --parse_mode html
                             ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                                --text "🗑Excluir Arquivo\nInforme o Numero do Arquivo:" \
+                                --text "🗑Delete File / ဖိုင်ဖျက်ပါ\nEnter the file number: / ဖိုင်နံပါတ်ကို ထည့်ပါ:" \
                                 --reply_markup "$(ShellBot.ForceReply)"
                         } || {
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                --text "$(echo -e "Nao existe arquivos disponiveis")" \
+                                --text "$(echo -e "Does not exist / မရှိပါ arquivos disponiveis")" \
                                 --parse_mode html
                             break
                         }
@@ -2187,7 +2187,7 @@ while :; do
                         break
                     fi
                     ;;
-                '🗑Excluir Arquivo\nInforme o Numero do Arquivo:')
+                '🗑Excluir Arquivo\nEnter file number / ဖိုင်နံပါတ်ကို ထည့်ပါ:')
                     [[ "${message_from_id[$id]}" != "$id_admin" ]] && break
                     Opc1=${message_text[$id]}
                     echo $Opc1
@@ -2197,7 +2197,7 @@ while :; do
                             --parse_mode html
                         break
                     } || {
-                        echo "opcao $Opc1"
+                        echo "option / ရွေးချယ်မှု $Opc1"
                         _DirArq=$(ls /etc/bot/arquivos)
                         i=0
                         unset _Pass
@@ -2212,7 +2212,7 @@ while :; do
                         [[ -e /etc/bot/arquivos/$_file ]] && {
                             rm /etc/bot/arquivos/$_file
                             ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                                --text "✅ *Excluido com sucesso* ✅" \
+                                --text "✅ *Deleted successfully / ဖျက်ပြီး ဖြစ်ပါသည်* ✅" \
                                 --parse_mode markdown
                             break
                         } || {
@@ -2222,7 +2222,7 @@ while :; do
                         }
                     }
                     ;;
-                '📤 HOSPEDAR ARQUIVOS 📤\n\nEnvie-me o arquivo:')
+                '📤 HOST FILES / ဖိုင်များတင်ရန် 📤\n\nEnvie-me o arquivo:')
                     if [[ "${update_id[$id]}" ]]; then
                         # Monitora o envio de arquivos
                         [[ ${message_document_file_id[$id]} ]] && file_id=${message_document_file_id[$id]} && download_file=1
@@ -2231,7 +2231,7 @@ while :; do
                             file_id=($file_id)
                             ShellBot.getFile --file_id "${file_id[0]}"
                             ShellBot.downloadFile --file_path ${return[file_path]} --dir "/tmp/file" && {
-                                msg='*✅ Arquivo hospedado com sucesso.*\n\n'
+                                msg='*✅ File hosted successfully. / ဖိုင်ကို အောင်မြင်စွာ မျှဝေပြီးပြီ။*\n\n'
                                 msg+="*📤 Informações*\n\n"
                                 msg+="*Nome*: ${message_document_file_name}\n"
                                 msg+="*Salvo em*: /etc/bot/arquivos"
@@ -2282,16 +2282,16 @@ while :; do
                     [[ "$_erro" == '1' ]] && break
                     echo "Nome: ${message_text[$id]}" >$CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Informe o user dele [Ex: @NAOKI_SSH]:' \
+                        --text 'Provide their user [Ex: @NAOKI_SSH]: / သူ၏ user ကို ပေးပါ [ဥပမာ: @NAOKI_SSH]:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
-                'Informe o user dele [Ex: @NAOKI_SSH]:')
+                'Enter their user / သူ့ user ကို ထည့်ပါ [Ex: @NAOKI_SSH]:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     _VAR1=$(echo -e ${message_text[$id]} | awk -F '@' {'print $2'})
                     [[ -z $_VAR1 ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "❌ Erro \n\n⚠️ Informe o user [EX: @NAOKI_SSH]")" \
+                            --text "$(echo -e "❌ Error / အမှား \n\n⚠️ Enter the user [EX: @NAOKI_SSH] / User ကို ထည့်ပါ [ဥပမာ @NAOKI_SSH]")" \
                             --parse_mode html
                         break
                     }
@@ -2303,7 +2303,7 @@ while :; do
                     }
                     echo "User: ${message_text[$id]}" >>$CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Quantas SSH ele pode criar:' \
+                        --text 'How many SSH can they create: / သူ/သူမ ဖန်တီးနိုင်မည့် SSH အရေအတွက်:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
                 'Quantas SSH ele pode criar:')
@@ -2327,9 +2327,9 @@ while :; do
                             break
                         }
                     }
-                    echo "Limite: ${message_text[$id]}" >>$CAD_ARQ
+                    echo "Limit / ကန့်သတ်ချက်: ${message_text[$id]}" >>$CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text 'Quantos dias de acesso:' \
+                        --text 'How many days of access: / ဝင်ရောက်ခွင့် ရက် အရေအတွက်:' \
                         --reply_markup "$(ShellBot.ForceReply)"
                     ;;
                 'Quantos dias de acesso:')
@@ -2339,11 +2339,11 @@ while :; do
                     _clientrev=$(cat $CAD_ARQ)
                     criar_rev $CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text "✅ Criado com sucesso. ✅\n\n$(<$CAD_ARQ)\n\nBOT: @${message_reply_to_message_from_username}" \
+                        --text "✅ Created successfully. / ဖန်တီးပြီးဖြစ်ပါသည်. ✅\n\n$(<$CAD_ARQ)\n\nBOT: @${message_reply_to_message_from_username}" \
                         --parse_mode html
                     ;;
                     # REMOVE REVENDEDOR
-                '🗑 REMOVER REVENDEDOR 🗑\n\nInforme o user dele [Ex: @NAOKI_SSH]:')
+                '🗑 REMOVE RESELLER / Reseller ဖျက်ရန် 🗑\n\nEnter their user / သူ့ user ကို ထည့်ပါ [Ex: @NAOKI_SSH]:')
                     echo -e "${message_text[$id]}" >$CAD_ARQ
                     _Var=$(sed -n '1 p' $CAD_ARQ | awk -F '@' {'print $2'})
                     [[ -z $_Var ]] && {
@@ -2355,8 +2355,8 @@ while :; do
                     del_rev $_Var
                     break
                     ;;
-                    # ALTERAR LIMITE
-                '♾ ALTERAR LIMITE REVENDA ♾\n\nInforme o user dele [Ex: @NAOKI_SSH]:')
+                    # CHANGE LIMIT / ကန့်သတ်ချက်ပြောင်းရန်
+                '♾ CHANGE RESELLER LIMIT / Reseller ကန့်သတ်ချက်ပြောင်းရန် ♾\n\nEnter their user / သူ့ user ကို ထည့်ပါ [Ex: @NAOKI_SSH]:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     echo -e "Revendedor: ${message_text[$id]}" >$CAD_ARQ
@@ -2370,11 +2370,11 @@ while :; do
                     [[ "${message_from_id[$id]}" == "$id_admin" ]] && {
                         [[ $(grep -wc $_Var1 $ativos) != '0' ]] && {
                             ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                                --text 'Informe o Limite SSH:' \
+                                --text 'Enter the SSH limit: / SSH ကန့်သတ်မှုကို ထည့်ပါ:' \
                                 --reply_markup "$(ShellBot.ForceReply)"
                         } || {
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                --text "$(echo -e "❌ Revendedor ${message_text[$id]} nao existe")" \
+                                --text "$(echo -e "❌ Revendedor ${message_text[$id]} does not exist / မရှိပါ")" \
                                 --parse_mode html
                             break
                         }
@@ -2382,17 +2382,17 @@ while :; do
                     [[ $(grep -w ${message_from_username} $ativos | awk '{print $NF}') == 'revenda' ]] && {
                         [[ "$(grep -wc "$_Var1" /etc/bot/revenda/${message_from_username}/${message_from_username})" != '0' ]] && {
                             ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                                --text 'Informe o Limite SSH:' \
+                                --text 'Enter SSH limit: / SSH ကန့်သတ်ချက် ထည့်ပါ:' \
                                 --reply_markup "$(ShellBot.ForceReply)"
                         } || {
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                --text "$(echo -e "❌ O Sub-revendedor nao existe")" \
+                                --text "$(echo -e "❌ O Sub-revendedor does not exist / မရှိပါ")" \
                                 --parse_mode html
                             break
                         }
                     }
                     ;;
-                'Informe o Limite SSH:')
+                'Enter SSH limit / SSH ကန့်သတ်ချက်ကို ထည့်ပါ:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     [[ ${message_text[$id]} != ?(+|-)+([0-9]) ]] && {
@@ -2421,25 +2421,25 @@ while :; do
                         [[ "$_limsomarev" -gt "$_limTotal" ]] && {
                             [[ "$_limTotal" == "$(($_limTotal - $_result))" ]] && _restant1='0' || _restant1=$(($_limTotal - $_result))
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                --text "$(echo -e "❌ Vc nao tem limite suficiente\n\nLimite restante: $_restant1 ")" \
+                                --text "$(echo -e "❌ Vc nao tem limite suficiente\n\nRemaining Limit / ကျန်ရှိသောကန့်သတ်ချက်: $_restant1 ")" \
                                 --parse_mode html
                             break
                         }
                     }
-                    echo -e "Limite: ${message_text[$id]}" >>$CAD_ARQ
+                    echo -e "Limit / ကန့်သတ်ချက်: ${message_text[$id]}" >>$CAD_ARQ
                     lim_rev $CAD_ARQ
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ LIMITE REVENDA ALTERADO !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n$(<$CAD_ARQ)")" \
+                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ RESELLER LIMIT CHANGED / Reseller ကန့်သတ်ချက် ပြောင်းပြီးပါပြီ !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n$(<$CAD_ARQ)")" \
                         --parse_mode html
-                    # ALTERAR DATA
+                    # CHANGE DATE / ရက်စွဲပြောင်းရန်
                     ;;
-                '📆 ALTERAR DATA REVENDA 📆\n\nInforme o user dele [Ex: @NAOKI_SSH]:')
+                '📆 CHANGE RESELLER DATE / Reseller ရက်စွဲပြောင်းရန် 📆\n\nEnter their user / သူ့ user ကို ထည့်ပါ [Ex: @NAOKI_SSH]:')
                     verifica_acesso
                     [[ "$_erro" == '1' ]] && break
                     _VAR1=$(echo -e ${message_text[$id]} | awk -F '@' {'print $2'})
                     [[ -z $_VAR1 ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "Revendedor ${message_text[$id]} nao existe")" \
+                            --text "$(echo -e "Revendedor ${message_text[$id]} does not exist / မရှိပါ")" \
                             --parse_mode html
                         break
                     }
@@ -2447,11 +2447,11 @@ while :; do
                         [[ $(grep -wc $_VAR1 $ativos) != '0' ]] && {
                             echo -e "Revendedor: ${message_text[$id]}" >$CAD_ARQ
                             ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                                --text 'Dias de acesso [Ex: 30]:' \
+                                --text 'Access days [Ex: 30]: / အသုံးပြုခွင့် ရက်များ [ဥပမာ: 30]:' \
                                 --reply_markup "$(ShellBot.ForceReply)"
                         } || {
                             ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                --text "$(echo -e "❌ O Revendedor ${message_text[$id]} nao existe")" \
+                                --text "$(echo -e "❌ O Revendedor ${message_text[$id]} does not exist / မရှိပါ")" \
                                 --parse_mode html
                             break
                         }
@@ -2460,11 +2460,11 @@ while :; do
                             [[ "$(grep -wc "$_VAR1" /etc/bot/revenda/${message_from_username}/${message_from_username})" != '0' ]] && {
                                 echo -e "Revendedor: ${message_text[$id]}" >$CAD_ARQ
                                 ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                                    --text 'Dias de acesso [Ex: 30]:' \
+                                    --text 'Access days [Ex: 30]: / အသုံးပြုခွင့် ရက်များ [ဥပမာ: 30]:' \
                                     --reply_markup "$(ShellBot.ForceReply)"
                             } || {
                                 ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                                    --text "$(echo -e "❌ O SubRevendedor ${message_text[$id]} nao existe")" \
+                                    --text "$(echo -e "❌ O SubRevendedor ${message_text[$id]} does not exist / မရှိပါ")" \
                                     --parse_mode html
                                 break
                             }
@@ -2484,22 +2484,22 @@ while :; do
                     dat_rev $CAD_ARQ
                     [[ "$_erro" == '1' ]] && break
                     ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
-                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ DATA REVENDA ALTERADA !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n$(<$CAD_ARQ)")" \
+                        --text "$(echo -e "=×=×=×=×=×=×=×=×=×=×=×\n<b>✅ RESELLER DATE CHANGED / Reseller ရက်စွဲ ပြောင်းပြီးပါပြီ !</b> !\n=×=×=×=×=×=×=×=×=×=×=×\n\n$(<$CAD_ARQ)")" \
                         --parse_mode html
                     ;;
                     # SUSPENDER REVENDEDOR
-                '🔒 SUSPENDER REVENDEDOR 🔒\n\nInforme o user dele [Ex: @NAOKI_SSH]:')
+                '🔒 SUSPENDER REVENDEDOR 🔒\n\nEnter their user / သူ့ user ကို ထည့်ပါ [Ex: @NAOKI_SSH]:')
                     _VAR1=$(echo -e ${message_text[$id]} | awk -F '@' {'print $2'})
                     [[ -z $_VAR1 ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "❌ Revendedor ${message_text[$id]} nao existe")" \
+                            --text "$(echo -e "❌ Revendedor ${message_text[$id]} does not exist / မရှိပါ")" \
                             --parse_mode html
                         break
                     }
                     susp_rev $_VAR1
                     break
                     ;;
-                '👤 CRIAR TESTE 👤\n\nQuantas horas deve durar EX: 1:')
+                '👤 CREATE TEST USER / Test User ဖန်တီးရန် 👤\n\nDuration in hours, e.g. 1: / ကြာချိန်နာရီ၊ ဥပမာ 1:')
                     verifica_acesso
                     echo $_erro
                     [[ "$_erro" == '1' ]] && break

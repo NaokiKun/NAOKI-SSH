@@ -1,8 +1,8 @@
 #!/bin/bash
 clear
-figlet "USUARIOS" | lolcat
+figlet "USERS / အသုံးပြုသူများ" | lolcat
     echo -e "╔─━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━─╗" | lolcat
-echo -e "\E[44;1;37m USUÁRIO        SENHA       LIMITE      VALIDADE \E[0m"
+echo -e "\E[44;1;37m USER / အသုံးပြုသူ        PASSWORD / စကားဝှက်       LIMIT / ကန့်သတ်      VALIDITY / သက်တမ်း \E[0m"
 echo ""
 [[ ! -e /bin/versao ]] && rm -rf /bin/menu
 for users in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |sort |grep -v "nobody" |grep -vi polkitd |grep -vi system-`

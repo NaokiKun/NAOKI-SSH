@@ -16,9 +16,9 @@ fun_multilogin() {
 			conssh="$(ps -u $user | grep sshd | wc -l)"
 			[[ "$conssh" -gt "$limit" ]] && {
 				pkill -u $user
-echo ULTRAPASSOU O LIMITE >> /root/banido
+echo EXCEEDED THE LIMIT / အကန့်အသတ် ကျော်လွန်ခဲ့သည် >> /root/banido
 echo NOME: $user DATA: $date >> /root/banido
-echo __________________________________ >> /root/banido		
+echo __________________________________ >> /root/banido
 			}
 			[[ -e /etc/openvpn/openvpn-status.log ]] && {
 				ovp="$(grep -E ,"$user", /etc/openvpn/openvpn-status.log | wc -l)"
@@ -29,9 +29,9 @@ echo __________________________________ >> /root/banido
 						(
 							telnet localhost 7505 <<-EOF
 								kill $ovpids
-echo ULTRAPASSOU O LIMITE >> /root/banido
+echo EXCEEDED LIMIT / အကန့်အသတ်ကျော်လွန်သည် >> /root/banido
 echo NOME: $user DATA: $date >> /root/banido
-echo __________________________________ >> /root/banido		
+echo __________________________________ >> /root/banido
 							EOF
 						) &>/dev/null &
 					done <<<"$listpid"
@@ -41,7 +41,7 @@ echo __________________________________ >> /root/banido
 	) &
 }
 while true; do
-    echo 'verificando...'
+    echo 'Checking... / စစ်ဆေးနေသည်...'
 	fun_multilogin > /dev/null 2>&1
 	sleep 15s
 done

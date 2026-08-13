@@ -54,7 +54,7 @@ msg17='\033[1;37m\033[1;33m(Sem imformação - Para Cancelar Digite CRTL + C)\03
     mv -f ${USRdatabase}tmp ${USRdatabase}
 clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m           ESCOLHA O PROTOCOLO V2RAY             \E[0m"
+    echo -e "\E[44;1;37m           CHOOSE V2RAY PROTOCOL / V2Ray Protocol ကို ရွေးပါ             \E[0m"
     echo -e "\033[1;37m• \033[1;33m[03] PROTOCOLO VMESS\033[1;31m"
     echo -e "\033[1;37m• \033[1;33m[24] PROTOCOLO VLESS\033[1;31m"
     echo -e "\033[1;37m• \033[1;33mEnsira seu domínio, Após digite 1 e Ensira seu domínio novamente \033[1;31m"
@@ -63,10 +63,10 @@ clear
     v2ray stream
 clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m            ADICIONE A PORTA V2RAY [8443] ou [443]           \E[0m"
+    echo -e "\E[44;1;37m            ADD V2RAY PORT [8443] or [443] / V2Ray Port ကို [8443] သို့မဟုတ် [443] ထည့်ပါ           \E[0m"
     v2ray port 
 clear
-echo "DIGITE SEU DOMÍNIO : "; read dm
+echo "ENTER YOUR DOMAIN : / ဒိုမိန်းကိုရိုက်ထည့်ပါ : "; read dm
 echo "DIGITE O PROXY : "; read px
 sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -78,7 +78,7 @@ sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     }
 
     protocolv2ray () {
-    echo -e "\E[44;1;37m            ALTERAR PROTOCOLO V2RAY             \E[0m"
+    echo -e "\E[44;1;37m            CHANGE V2RAY PROTOCOL / V2Ray Protocol ကို ပြောင်းပါ             \E[0m"
     echo -e "\033[1;37m• \033[1;33mEscolha a opção 24 e coloque o domínio do seu IP\033[1;31m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     v2ray stream
@@ -95,7 +95,7 @@ sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     fun_v2raymanager
     }
     portv () {
-    echo -e "\E[44;1;37m            ALTERAR PORTA V2RAY             \E[0m"
+    echo -e "\E[44;1;37m            CHANGE V2RAY PORT / V2Ray Port ကို ပြောင်းပါ             \E[0m"
     v2ray port
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
@@ -111,7 +111,7 @@ sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     unistallv2 () {
     source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove > /dev/null 2>&1
     rm -rf /etc/SSHPlus/RegV2ray > /dev/null 2>&1
-    echo -e "\n\033[1;32mV2RAY REMOVIDO COM SUCESSO !\033[0m"
+    echo -e "\n\033[1;32mV2RAY successfully removed! / V2RAY ကို အောင်မြင်စွာ ဖယ်ရှားပြီးပါပြီ!\033[0m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
     fun_v2raymanager
@@ -139,7 +139,7 @@ sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     sed -i '17i\           \},' /etc/v2ray/config.json
     echo ""
     while true; do
-    echo -ne "\e[91m >> Digite um usuário: \033[1;92m"
+    echo -ne "\e[91m >> Enter a username: / အသုံးပြုသူအမည် ထည့်ပါ: \033[1;92m"
          read -p ": " nick
          nick="$(echo $nick|sed -e 's/[^a-z0-9 -]//ig')"
          if [[ -z $nick ]]; then
@@ -153,7 +153,7 @@ sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     done
     echo -e "\e[91m >> Adicionar UUID: \e[92m$UUID "
     while true; do
-         echo -ne "\e[91m >> Duração de UUID (Dias):\033[1;92m " && read diasuser
+         echo -ne "\e[91m >> UUID duration (days): / UUID ကာလ (ရက်):\033[1;92m " && read diasuser
          if [[ -z "$diasuser" ]]; then
          echo -e "$msg17" && continue
          elif [[ "$diasuser" != +([0-9]) ]]; then
@@ -166,7 +166,7 @@ sed -i "44 s;$dm;$px;g" /etc/v2ray/config.json
     #Lim
     [[ $(cat /etc/passwd |grep $1: |grep -vi [a-z]$1 |grep -v [0-9]$1 > /dev/null) ]] && return 1
     valid=$(date '+%C%y-%m-%d' -d " +$diasuser days") && datexp=$(date "+%F" -d " + $diasuser days")
-    echo -e "\e[91m >> Expira em : \e[92m$datexp "
+    echo -e "\e[91m >> Expires in : / သက်တမ်းကုန်ဆုံးသည် : \e[92m$datexp "
     ##Registro
     echo "  $UUID | $nick | $valid " >> /etc/SSHPlus/RegV2ray
     Fecha=`date +%d-%m-%y-%R`
@@ -211,7 +211,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\E[44;1;37m            ELIMINAR USUARIO | UUID V2RAY             \E[0m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[97m               USUARIOS REGISTRADOS"
+    echo -e "\e[97m               REGISTERED USERS / မှတ်ပုံတင်ထားသော အသုံးပြုသူများ"
     echo -e "\e[33m$(cat /etc/SSHPlus/RegV2ray|cut -d '|' -f2,1)" 
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -ne "\e[91m >> Digita UUID para eliminar:\n \033[1;92m " && read uuidel
@@ -239,7 +239,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     clear 
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m            USUARIOS REGISTRADOS | UUID V2RAY             \E[0m"
+    echo -e "\E[44;1;37m            USERS / အသုံးပြုသူများ REGISTRADOS | UUID V2RAY             \E[0m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     # usersss=$(cat /etc/SSHPlus/RegV2ray|cut -d '|' -f1)
     # cat /etc/SSHPlus/RegV2ray|cut -d'|' -f3
@@ -249,7 +249,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     local RETURN="$(cat $HOST|cut -d'|' -f2)"
     local IDEUUID="$(cat $HOST|cut -d'|' -f1)"
     if [[ -z $RETURN ]]; then
-    echo -e "----- NENHUM USUARIO REGISTRADO -----"
+    echo -e "----- NO USERS REGISTERED / အသုံးပြုသူ မရှိပါ -----"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
     fun_v2raymanager
     else
@@ -267,16 +267,16 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     usris="$(cat /etc/SSHPlus/RegV2ray|grep -w "$hostreturn"|cut -d'|' -f2)"
     local contador_secuencial+="\e[93m$hostreturn \e[97m|\e[93m$usris\e[97m|\e[93m $EXPTIME \n"           
           if [[ $i -gt 30 ]]; then
-    	      echo -e "$contador_secuencial"
-    	  unset contador_secuencial
-    	  unset i
-    	  fi
+	      echo -e "$contador_secuencial"
+	  unset contador_secuencial
+	  unset i
+	  fi
     let i++
     done <<< "$IDEUUID"
     [[ ! -z $contador_secuencial ]] && {
     linesss=$(cat /etc/SSHPlus/RegV2ray | wc -l)
-    	      echo -e "$contador_secuencial \n Numero de Registrados: $linesss"
-    	}
+	      echo -e "$contador_secuencial \n Numero de Registrados: $linesss"
+	}
     fi
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
@@ -296,7 +296,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     local RETURN="$(cat $HOST|cut -d'|' -f2)"
     local IDEUUID="$(cat $HOST|cut -d'|' -f1)"
     if [[ -z $RETURN ]]; then
-    echo -e "----- NENHUMA PORTA REGISTRADA -----"
+    echo -e "----- NO PORTS REGISTERED / ဆိပ်ကမ်း မရှိပါ -----"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
     fun_v2raymanager
     else
@@ -307,16 +307,16 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     gblim=$(cat /etc/SSHPlus/v2ray/lisportt.log|grep -w "$hostreturn"|cut -d'|' -f2)
     local contador_secuencial+="         \e[97mPUERTO: \e[93m$hostreturn \e[97m|\e[93m$statsss \e[97m|\e[93m $gblim GB  \n"          
           if [[ $i -gt 30 ]]; then
-    	      echo -e "$contador_secuencial"
-    	  unset contador_secuencial
-    	  unset i
-    	  fi
+	      echo -e "$contador_secuencial"
+	  unset contador_secuencial
+	  unset i
+	  fi
     let i++
     done <<< "$IDEUUID"
     [[ ! -z $contador_secuencial ]] && {
     linesss=$(cat /etc/SSHPlus/v2ray/lisportt.log | wc -l)
-    	      echo -e "$contador_secuencial \n Puertos Limitados: $linesss"
-    	}
+	      echo -e "$contador_secuencial \n Puertos Limitados: $linesss"
+	}
     fi
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
@@ -368,7 +368,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     local RETURN="$(cat $HOST|cut -d'|' -f2)"
     local IDEUUID="$(cat $HOST|cut -d'|' -f1)"
     if [[ -z $RETURN ]]; then
-    echo -e "----- NENHUMA PORTA REGISTRADA -----"
+    echo -e "----- NO PORT REGISTERED ----- / ----- တင်သွင်းထားသော Port မရှိပါ -----"
     return 0
     else
     i=1
@@ -379,17 +379,17 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     local contador_secuencial+="         \e[97mPUERTO: \e[93m$hostreturn \e[97m|\e[93m$statsss \e[97m|\e[93m $gblim GB  \n"  
             
           if [[ $i -gt 30 ]]; then
-    	      echo -e "$contador_secuencial"
-    	  unset contador_secuencial
-    	  unset i
-    	  fi
+	      echo -e "$contador_secuencial"
+	  unset contador_secuencial
+	  unset i
+	  fi
     let i++
     done <<< "$IDEUUID"
 
     [[ ! -z $contador_secuencial ]] && {
     linesss=$(cat /etc/SSHPlus/v2ray/lisportt.log | wc -l)
-    	      echo -e "$contador_secuencial \n Puertos Limitados: $linesss"
-    	}
+	      echo -e "$contador_secuencial \n Puertos Limitados: $linesss"
+	}
     fi
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
@@ -406,7 +406,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     done
     invaliduuid () {
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\e[91m                PORTA INVALIDA \n"
+    echo -e "\e[91m                INVALID PORT / Port မမှန်ကန်ပါ \n"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "\033[1;37m• \033[1;33mEnter Para Continuar\033[1;31m" && read enter
     fun_v2raymanager
@@ -423,11 +423,11 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     fun_v2raymanager
     }
     ## MENU
-    echo -e "\033[1;37m\033[1;33m[1] > LIMITAR DADOS x PORTA\033[1;31m"
-    echo -e "\033[1;37m\033[1;33m[2] > RESETAR DADOS DE PORTA\033[1;31m"
+    echo -e "\033[1;37m\033[1;33m[1] > LIMIT DATA BY PORT / PORT အလိုက် ဒေတာ ကန့်သတ်ရန်\033[1;31m"
+    echo -e "\033[1;37m\033[1;33m[2] > RESET PORT DATA / Port ဒေတာ ကို ရှင်းလင်းရန်\033[1;31m"
     echo -e "\033[1;37m\033[1;33m[3] > VER DATOS CONSUMIDOS\033[1;31m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\033[1;32m [0] > \e[97m\033[1;41m VOLTAR \033[1;37m"
+    echo -e "\033[1;32m [0] > \e[97m\033[1;41m BACK / နောက်သို့ \033[1;37m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     selection=$(selection_fun 3)
     case ${selection} in
@@ -457,7 +457,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     clear 
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[44;1;37m            ELIMINAR EXPIRADOS | UUID V2RAY             \E[0m"
+    echo -e "\E[44;1;37m            ELIMINAR EXPIRED USERS / သက်တမ်းကုန် User များ | UUID V2RAY             \E[0m"
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
     echo -e "                    $statgen " 
@@ -473,7 +473,7 @@ echo "App: https://apps.apple.com/br/app/fair-vpn/id1533873488"
     local range
     for((i=0; i<=$1; i++)); do range[$i]="$i "; done
     while [[ ! $(echo ${range[*]}|grep -w "$selection") ]]; do
-    echo -ne "\033[1;37m ► Selecione uma Opção: " >&2
+    echo -ne "\033[1;37m ► Select an Option: / ရွေးချယ်ပါ: " >&2
     read selection
     tput cuu1 >&2 && tput dl1 >&2
     done
@@ -508,9 +508,9 @@ echo ""
 			fi`;          
 			echo -e "╔═════════════════════•⊱✦⊰•═════════════════════╗" | lolcat
 			echo ""
-echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCRIAR USUARIO V2RAY\033[1;31m
-[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mREMOVER USUARIO \033[1;31m
-[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mMOSTAR USUARIOS CADASTRADO\033[1;31m
+echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCREATE USER / User ဖန်တီးရန် V2RAY\033[1;31m
+[\033[1;36m02\033[1;31m] \033[1;37m• \033[1;33mREMOVE USER / User ဖျက်ရန် \033[1;31m
+[\033[1;36m03\033[1;31m] \033[1;37m• \033[1;33mMOSTAR USERS / အသုံးပြုသူများ CADASTRADO\033[1;31m
 [\033[1;36m04\033[1;31m] \033[1;37m• \033[1;33mINFORMAÇÕES DE CONEXÃO \033[1;31m
 [\033[1;36m05\033[1;31m] \033[1;37m• \033[1;33mESTATÍSTICAS DE CONSUMO\033[1;31m
 [\033[1;36m06\033[1;31m] \033[1;37m• \033[1;33mLIMITAR USUÁRIO POR CONSUMO\e[91m\033[1;31m
@@ -586,5 +586,3 @@ echo -e "\033[1;31m[\033[1;36m01\033[1;31m] \033[1;37m• \033[1;33mCRIAR USUARI
 		done
 	}
     fun_v2raymanager
-
-}

@@ -76,14 +76,14 @@ backbot=$1
 				sleep 1
 				tar cvf /root/backup.vps /root/usuarios.db /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHPlus/senha /etc/SSHPlus/v2ray /etc/openvpn $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
 				echo ""
-				echo -e "\033[1;32mBACKUP CRIADO COM SUCESSO !\033[0m"
+				echo -e "\\033[1;32mBACKUP CREATED SUCCESSFULLY ! / Backup အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ!\\033[0m"
 				echo ""
 			} || {
 				rm -rf $HOME/backup.vps >/dev/null 2>&1
 				sleep 1
 				tar cvf /root/backup.vps /etc/shadow /etc/passwd /etc/group /etc/gshadow /etc/SSHPlus/senha /etc/SSHPlus/v2ray $HOME/BOT/permitidos $HOME/BOT/revenda >/dev/null 2>&1
 				echo ""
-				echo -e "\033[1;32mBACKUP CRIADO COM SUCESSO !\033[0m"
+				echo -e "\\033[1;32mBACKUP CREATED SUCCESSFULLY ! / Backup အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ!\\033[0m"
 				echo ""
 
 			}
@@ -97,9 +97,9 @@ backbot=$1
 				echo ""
 				if [ -e /var/www/html/backup/backup.vps ]; then
 					if [[ "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
-						echo -e "\033[1;32mLINK\033[1;37m: \033[1;36m$IP:81/html/backup/backup.vps\033[0m"
+						echo -e "\\033[1;32mLINK / လင့်ခ်\\033[1;37m: \\033[1;36m$IP:81/html/backup/backup.vps\\033[0m"
 					else
-						echo -e "\033[1;32mLINK\033[1;37m: \033[1;36m$IP:81/backup/backup.vps\033[0m"
+						echo -e "\\033[1;32mLINK / လင့်ခ်\\033[1;37m: \\033[1;36m$IP:81/backup/backup.vps\\033[0m"
 					fi
 				else
 					echo -e "\033[1;32mDisponivel em\033[1;31m" ~/"backup.vps\033[0m"
@@ -140,7 +140,7 @@ backbot=$1
 	if [[ "$opcao" = '2' ]]; then
 		if [ -f "/root/backup.vps" ]; then
 			[[ -e "/etc/openvpn" ]] && {
-				read -p "O certificado Ovpn também será restaurado, deseja continuar? [s/n]: " -e -i s resposta
+				read -p "The Ovpn certificate will also be restored, continue? [s/n]: / Ovpn လက်မှတ်ကိုလည်း ပြန်လည်ထည့်မည်၊ ဆက်လုပ်မလား? [s/n]: " -e -i s resposta
 				[[ "$resposta" = 's' ]] && {
 					echo ""
 					echo -e "\033[1;36mRestaurando backup..."

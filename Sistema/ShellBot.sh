@@ -60,15 +60,15 @@ while read _pkg_ _ver_; do
 	if command -v $_pkg_ &>/dev/null; then
 		if [[ $($_pkg_ --version 2>&1) =~ [0-9]+\.[0-9]+ ]]; then
 			if ! awk 'BEGIN { exit ARGV[1] < ARGV[2] }' $BASH_REMATCH $_ver_; then
-				printf "%s: erro: requer o pacote '%s %s' ou superior.\n" ${_SHELLBOT_[name]} $_pkg_ $_ver_ 1>&2
+				printf "%s: error: requires package '%s %s' or higher / အမှား: ထို package သို့မဟုတ် အထက်ဗားရှင်း လိုအပ်သည်။\n" ${_SHELLBOT_[name]} $_pkg_ $_ver_ 1>&2
 				exit 1
 			fi
 		else
-			printf "%s: erro: '%s' não foi possível obter a versão.\n" ${_SHELLBOT_[name]} $_pkg_ 1>&2
+			printf "%s: error: could not obtain version for '%s'. / အမှား: ထို package ၏ ဗားရှင်းကို ရယူ၍ မရပါ။\n" ${_SHELLBOT_[name]} $_pkg_ 1>&2
 			exit 1
 		fi
 	else
-		printf "%s: erro: '%s' o pacote requerido está ausente.\n" ${_SHELLBOT_[name]} $_pkg_ 1>&2
+		printf "%s: error: required package '%s' is missing. / အမှား: လိုအပ်သည့် package မရှိပါ။\n" ${_SHELLBOT_[name]} $_pkg_ 1>&2
 		exit 1
 	fi
 done <<< "${_SHELLBOT_[packages]//,/$'\n'}"
@@ -98,25 +98,25 @@ readonly _CURL_OPT_='--silent --request'	# CURL (opções)
 readonly _ERR_TYPE_BOOL_='tipo incompatível: suporta somente "true" ou "false".'
 readonly _ERR_TYPE_INT_='tipo incompatível: suporta somente inteiro.'
 readonly _ERR_TYPE_FLOAT_='tipo incompatível: suporta somente float.'
-readonly _ERR_PARAM_REQUIRED_='opção requerida: verique se o(s) parâmetro(s) ou argumento(s) obrigatório(s) estão presente(s).'
-readonly _ERR_TOKEN_UNAUTHORIZED_='não autorizado: verifique se possui permissões para utilizar o token.'
+readonly _ERR_PARAM_REQUIRED_='required option: check that the required parameter(s) or argument(s) are present / လိုအပ်သော option: လိုအပ်သော parameter(များ) သို့မဟုတ် argument(များ) ရှိကြောင်း စစ်ဆေးပါ။'
+readonly _ERR_TOKEN_UNAUTHORIZED_='unauthorized: check you have permissions to use the token / ခွင့်မရ: token ကို အသုံးပြုရန် ခွင့်များ ရှိ/မရှိ စစ်ဆေးပါ။'
 readonly _ERR_TOKEN_INVALID_='token inválido: verique o número do token e tente novamente.'
-readonly _ERR_BOT_ALREADY_INIT_='ação não permitida: o bot já foi inicializado.'
-readonly _ERR_FILE_NOT_FOUND_='falha ao acessar: não foi possível ler o arquivo.'
-readonly _ERR_DIR_WRITE_DENIED_='permissão negada: não é possível gravar no diretório.'
-readonly _ERR_DIR_NOT_FOUND_='Não foi possível acessar: diretório não encontrado.'
-readonly _ERR_FILE_INVALID_ID_='id inválido: arquivo não encontrado.'
-readonly _ERR_UNKNOWN_='erro desconhecido: ocorreu uma falha inesperada. Reporte o problema ao desenvolvedor.'
+readonly _ERR_BOT_ALREADY_INIT_='action not allowed: the bot has already been initialized / လုပ်ဆောင်ချက် မခွင့်ပြု: bot ကို အစပြုပြီးပါပြီ။'
+readonly _ERR_FILE_NOT_FOUND_='access failure: could not read the file / ဖိုင်ကို ဖတ်၍ မရပါ။'
+readonly _ERR_DIR_WRITE_DENIED_='permission denied: cannot write to the directory / ခွင့်မပေးပါ: directory တွင် ရေး၍ မရပါ။'
+readonly _ERR_DIR_NOT_FOUND_='could not access: directory not found / ခေါက်ရောက်၍ မရပါ: directory တွေ့မရပါ။'
+readonly _ERR_FILE_INVALID_ID_='invalid id: file not found / id မမှန်: ဖိုင် မတွေ့ပါ။'
+readonly _ERR_UNKNOWN_='unknown error: an unexpected failure occurred. Report the issue to the developer. / အမွားမသိ: မမျှော်လင့်ထားသော အမှား ဖြစ်ပွားခဲ့သည်။ developer ထံ အစီရင်ခံပါ။'
 readonly _ERR_SERVICE_NOT_ROOT_='acesso negado: requer privilégios de root.'
-readonly _ERR_SERVICE_EXISTS_='erro ao criar o serviço: o nome do serviço já existe.'
+readonly _ERR_SERVICE_EXISTS_='error creating service: the service name already exists / error: အဆိုပါ service အမည် သည် ရှိပြီးသားဖြစ်သည်။'
 readonly _ERR_SERVICE_SYSTEMD_NOT_FOUND_='erro ao ativar: o sistema não possui suporte ao gerenciamento de serviços "systemd".'
-readonly _ERR_SERVICE_USER_NOT_FOUND_='usuário não encontrado: a conta de usuário informada é inválida.'
-readonly _ERR_VAR_NAME_='variável não encontrada: o identificador é inválido ou não existe.'
-readonly _ERR_FUNCTION_NOT_FOUND_='função não encontrada: o identificador especificado é inválido ou não existe.'
-readonly _ERR_ARG_='argumento inválido: o argumento não é suportado pelo parâmetro especificado.'
+readonly _ERR_SERVICE_USER_NOT_FOUND_='user not found: the provided user account is invalid / အသုံးပြုသူ မတွေ့ပါ: ဖော်ပြထားသော user account မမှန်ပါ।'
+readonly _ERR_VAR_NAME_='variable not found: the identifier is invalid or does not exist / variable မတွေ့ပါ: identifier သည် မမှန် သို့မဟုတ် မရှိပါ။'
+readonly _ERR_FUNCTION_NOT_FOUND_='function not found: the specified identifier is invalid or does not exist / function မတွေ့ပါ: ဖော်ပြထားသော identifier မမှန် သို့မဟုတ် မရှိပါ။'
+readonly _ERR_ARG_='invalid argument: the argument is not supported by the specified parameter / argument မမှန်: ဖော်ပြထားသော parameter မှ အဆိုပါ argument ကို မထောက်ပံ့ပါ။'
 readonly _ERR_RULE_ALREADY_EXISTS_='falha ao definir: o nome da regra já existe.'
-readonly _ERR_HANDLE_EXISTS_='erro ao registar: já existe um handle vinculado ao callback'
-readonly _ERR_CONNECTION_='falha de conexão: não foi possível estabelecer conexão com o Telegram.'
+readonly _ERR_HANDLE_EXISTS_='error registering: a handle already exists attached to the callback / အမှား: callback သို့ ချိတ်ဆက်ထားသော handle တစ်ခု ကြိုတင် ရှိသည်။'
+readonly _ERR_CONNECTION_='connection failure: could not establish connection to Telegram / ချိတ်ဆက်မှု ပျက်ကွက်: Telegram နှင့် ချိတ်ဆက်၍ မရပါ။'
 
 # Maps
 declare -A _BOT_HANDLE_
@@ -417,7 +417,7 @@ MessageError()
 	esac
 
 	# Imprime erro
-	printf "%s: erro: linha %s: %s: %s: %s\n"					\
+\tprintf \"%s: error: line / အမှား: စာကြောင်း %s: %s: %s: %s\\n\"\t\t\t\t\t\\
 							"${_BOT_SCRIPT_}"					\
 							"${BASH_LINENO[$i]:--}" 			\
 							"${FUNCNAME[$i]:--}" 				\
@@ -509,7 +509,7 @@ _eof
 
 	[[ $? -eq 0 ]] && {	
 		
-		printf '%s foi criado com sucesso !!\n' $service	
+\t\tprintf '%s was created successfully !! / အောင်မြင်စွာ ဖန်တီးပြီးပါပြီ !!\\n' $service\t
 		echo -n "Habilitando..."
  		systemctl enable $service &>/dev/null && echo -e $ok || \
 		{ echo -e $fail; MessageError API; }
@@ -517,7 +517,7 @@ _eof
 		sed -i -r '/^\s*ShellBot.init\s/s/\s--?(s(ervice)?|u(ser)?\s+\w+)\b//g' "$1"
 		systemctl daemon-reload
 
-		echo -n "Iniciando..."
+\t\techo -n \"Starting... / စတင်နေသည်...\"
 		systemctl start $service &>/dev/null && {
 		
 			echo -e $ok
@@ -5773,7 +5773,7 @@ _EOF
 		if [[ $_BOT_MONITOR_ ]]; then
 			printf -v bar '=%.s' {1..50}
 			printf "$bar\nData: %(%d/%m/%Y %T)T\n"
-			printf 'Script: %s\nBot (nome): %s\nBot (usuario): %s\nBot (id): %s\n' 	\
+\t\t\tprintf 'Script / စကရစ်: %s\\nBot (name) / Bot (နာမည်): %s\\nBot (user) / Bot (အသုံးပြုသူ): %s\\nBot (id) / Bot (အိုင်ဒီ): %s\\n' \t\\
 					"${_BOT_SCRIPT_}" 												\
 					"${_BOT_INFO_[2]}" 												\
 					"${_BOT_INFO_[3]}" 												\

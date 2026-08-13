@@ -3,9 +3,9 @@ tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TCP Tweaker 1.
 if [[ `grep -c "^#PH56" /etc/sysctl.conf` -eq 1 ]]
 then
 	echo ""
-	echo "As configurações de rede TCP Tweaker já foram adicionadas no sistema!"
+	echo "TCP Tweaker network settings have already been added to the system! / TCP Tweaker ကွန်ရက်သတ်မှတ်ချက်များကို စနစ်တွင် ထည့်ပြီးပါပြီ!"
 	echo ""
-	read -p "Deseja remover as configurações do TCP Tweaker? [s/n]: " -e -i n resposta0
+	read -p "Remove the TCP Tweaker settings? / TCP Tweaker သတ်မှတ်ချက်များ ဖျက်ချင်ပါသလား? [s/n]: " -e -i n resposta0
 	if [[ "$resposta0" = 's' ]]; then
 		grep -v "^#PH56
 net.ipv4.tcp_window_scaling = 1
@@ -17,7 +17,7 @@ net.ipv4.tcp_low_latency = 1
 net.ipv4.tcp_slow_start_after_idle = 0" /etc/sysctl.conf > /tmp/syscl && mv /tmp/syscl /etc/sysctl.conf
 sysctl -p /etc/sysctl.conf > /dev/null
 		echo ""
-		echo "As configurações de rede do TCP Tweaker foram removidas com sucesso."
+		echo "TCP Tweaker network settings were removed successfully. / TCP Tweaker ကွန်ရက် သတ်မှတ်ချက်များကို အောင်မြင်စွာ ဖျက်ပြီးပါပြီ။"
 		echo ""
 	exit
 	else 
@@ -27,10 +27,10 @@ sysctl -p /etc/sysctl.conf > /dev/null
 else
 	echo ""
 	echo "Este é um script experimental. Use por sua conta e risco!"
-	echo "Este script irá alterar algumas configurações de rede"
-	echo "do sistema para reduzir a latência e melhorar a velocidade."
+	echo "This script will change some network settings / ဒီ script သည် ကွန်ရက် သတ်မှတ်ချက်အချို့ကို ပြောင်းလဲပါမည်"
+	echo "of the system to reduce latency and improve speed. / စနစ်၏ latency ကို လျော့ချပြီး အမြန်နှုန်း တိုးတက်စေရန်"
 	echo ""
-	read -p "Continuar com a instalação? [s/n]: " -e -i n resposta
+	read -p "Continue with the installation? / ဆက်လက် တင်သွင်းမလား? [s/n]: " -e -i n resposta
 	if [[ "$resposta" = 's' ]]; then
 	echo ""
 	echo "Modificando as seguintes configurações:"
@@ -46,11 +46,11 @@ net.ipv4.tcp_slow_start_after_idle = 0" >> /etc/sysctl.conf
 echo ""
 sysctl -p /etc/sysctl.conf
 		echo ""
-		echo "As configurações de rede do TCP Tweaker foram adicionadas com sucesso."
+		echo "TCP Tweaker network settings were added successfully. / TCP Tweaker ကွန်ရက် သတ်မှတ်ချက်များကို အောင်မြင်စွာ ထည့်သွင်းပြီးပါပြီ။"
 		echo ""
 	else
 		echo ""
-		echo "A instalação foi cancelada pelo usuário!"
+		echo "Installation was canceled by the user! / တင်သွင်းမှုကို အသုံးပြုသူက ပယ်ဖျက်ခဲ့သည်!"
 		echo ""
 	fi
 fi

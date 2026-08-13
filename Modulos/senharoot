@@ -9,7 +9,7 @@ para continuar...\033[1;31m\033[0m"
 read  -p : pass
 (echo $pass; echo $pass)|passwd 2>/dev/null
 sleep 1s
-echo -e "\033[1;31mSENHA ALTERADA COM SUCESSO!\033[0m"
+echo -e "\033[1;31mPASSWORD CHANGED / စကားဝှက် ပြောင်းပြီးပါပြီ COM SUCESSO!\033[0m"
 sleep 5s
 cd
 clear

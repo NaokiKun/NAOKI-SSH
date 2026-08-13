@@ -35,7 +35,7 @@ fun_bar() {
 clear
 echo -e "\E[44;1;37m                Otimizar Servidor                \E[0m"
 echo ""
-echo -e "\033[1;32m               Atualizando pacotes\033[0m"
+echo -e "\033[1;32m               Updating packages / ပက်ကေ့ဂျ်များအား အပ်ဒိတ်လုပ်နေသည်\033[0m"
 echo ""
 fun_bar 'apt-get update -y' 'apt-get upgrade -y'
 echo ""
@@ -43,11 +43,11 @@ echo -e "\033[1;32m      Corrigindo problemas de dependências"
 echo""
 fun_bar 'apt-get -f install'
 echo""
-echo -e "\033[1;32m            Removendo pacotes inúteis"
+echo -e "\033[1;32m            Removing useless packages / မလိုအပ်သော package များကို ဖယ်ရှားနေသည်"
 echo ""
 fun_bar 'apt-get autoremove -y' 'apt-get autoclean -y'
 echo ""
-echo -e "\033[1;32m        Removendo pacotes com problemas"
+echo -e "\033[1;32m        Removing packages with issues / ပြဿနာရှိသော package များကို ဖယ်ရှားနေသည်"
 echo ""
 fun_bar 'apt-get -f remove -y' 'apt-get clean -y'
 #Limpar o cache memoria RAM

@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo -e "\E[44;1;37m               INFORMACOES DO VPS                 \E[0m"
+echo -e "\E[44;1;37m               INFORMATION / အချက်အလက် DO VPS                 \E[0m"
 echo ""
 if [ -f /etc/lsb-release ]
 then
@@ -43,7 +43,7 @@ echo ""
 else
 echo -e "\033[1;32mPROCESSADOR\033[0m"
 echo ""
-echo "Não foi possivel obter informações"
+echo "Could not retrieve information / အချက်အလက် မရနိုင်ပါ"
 fi
 
 if free 1>/dev/null 2>/dev/null
@@ -63,7 +63,7 @@ echo ""
 else
 echo -e "\033[1;32mMEMORIA RAM\033[0m"
 echo ""
-echo "Não foi possivel obter informações"
+echo "Could not retrieve information / အချက်အလက် မရနိုင်ပါ"
 fi
 [[ ! -e /bin/versao ]] && rm -rf /etc/SSHPlus
 echo -e "\033[1;31m• \033[1;32mSERVICOS EM EXECUCAO\033[1;31m •\033[0m"

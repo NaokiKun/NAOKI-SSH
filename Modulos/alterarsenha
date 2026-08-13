@@ -1,7 +1,7 @@
 #!/bin/bash
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Alterar Senha de Usuário" ; tput sgr0
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Change User Password / အသုံးပြုသူ စကားဝှက် ပြောင်းရန်" ; tput sgr0
 echo ""
-echo -e "\033[1;33mLISTA DE USUARIOS E SUAS SENHAS: \033[0m"
+echo -e "\033[1;33mLISTA DE USERS / အသုံးပြုသူများ E SUAS SENHAS: \033[0m"
 echo""
 _userT=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody)
 i=0
@@ -39,7 +39,7 @@ else
 		sizepass=$(echo ${#password})
 		if [[ $sizepass -lt 4 ]]
 		then
-			tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Senha vazio ou inválida! use no minimo 4 caracteres" ; echo "" ; tput sgr0
+			tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "Empty or invalid password! Use at least 4 characters / စကားဝှက် မရှိပါ သို့မဟုတ် မမှန်ပါ! အနည်းဆုံး စာလုံး 4 လုံး သုံးပါ" ; echo "" ; tput sgr0
 			exit 1
 		else
 			ps x | grep $user | grep -v grep | grep -v pt > /tmp/rem
@@ -51,7 +51,7 @@ else
 				exit 1
 			else
 				echo ""
-				tput setaf 7 ; tput setab 4 ; tput bold ; echo "Usuário conectado. Desconectando..." ; tput sgr0
+				tput setaf 7 ; tput setab 4 ; tput bold ; echo "User connected. Disconnecting... / အသုံးပြုသူ ချိတ်ဆက်ထားသည်။ ဖြုတ်နေပါသည်..." ; tput sgr0
 				pkill -f $user
 				echo "$user:$password" | chpasswd
 				tput setaf 7 ; tput setab 1 ; tput bold ; echo "" ; echo "A senha do usuário $user foi alterada para: $password" ; echo "" ; tput sgr0
@@ -60,6 +60,6 @@ else
 			fi
 		fi
 	else
-		tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "O usuário $user não existe!" ; echo "" ; tput sgr0
+		tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "User $user does not exist! / အသုံးပြုသူ $user မရှိပါ!" ; echo "" ; tput sgr0
 	fi
 fi

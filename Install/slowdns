@@ -23,9 +23,9 @@ echo -e "${RED}$banner${SCOLOR}"
     mv slowdns $PREFIX/bin/slowdns
     chmod +x $PREFIX/bin/slowdns
     [[ $(grep -c 'slowdns' $PREFIX/etc/profile) == '0' ]] && echo 'slowdns' >> $PREFIX/etc/profile
-    echo -e "\n${GREEN}BAIXANDO O SCRIPT POR FAVOR AGUARDE ! ${SCOLOR}"
+    echo -e "\n${GREEN}DOWNLOADING THE SCRIPT PLEASE WAIT ! / စကရစ်ဒေါင်းလုဒ်နေပါသည် ကျေးဇူးပြု၍ စောင့်ပါ! ${SCOLOR}"
     curl -O https://raw.githubusercontent.com/TH30R10N/PR0/main/slowdns/dns > /dev/null 2>&1
-    echo -e "\n${RED}[${YELLOW}!${RED}] ${YELLOW}SCRIPT BAIXADO ! DA PROXIMA VEZ\nEXECULTE APENAS O COMANDO ${RED}(${GREEN}slowdns${RED})\n${YELLOW}MESMO QUE VOCÊ ESTEJA OFFLINE !${SCOLOR}"
+    echo -e "\n${RED}[${YELLOW}!${RED}] ${YELLOW}SCRIPT DOWNLOADED ! / စကရစ်ဒေါင်းလုဒ်ပြီးပါပြီ ! NEXT TIME\nJUST RUN THE COMMAND ${RED}(${GREEN}slowdns${RED})\n${YELLOW}EVEN IF YOU ARE OFFLINE ! / သင် အော့ဖ်လိုင်းဖြစ်နေသော်လည်း !${SCOLOR}"
     chmod +x dns
 }
 [[ ! -e $HOME/credenciais ]] && {
@@ -61,7 +61,7 @@ dns=$3
 [[ -z "$dns" ]] && {
     dns='187.50.250.115'
 }
-echo -ne "\n${RED}[${YELLOW}!${RED}] ${YELLOW}PARA CONTINUAR CERTIFIQUE-SE DE\nESTÁ APENAS COM OS ${RED}(${YELLOW}DADOS MOVEIS${RED})\n${YELLOW}ATIVADO ${GREEN}ENTER ${YELLOW}PARA CONTINUAR.. ${SCOLOR}"; read
+    echo -ne "\n${RED}[${YELLOW}!${RED}] ${YELLOW}TO CONTINUE, MAKE SURE YOU ARE\nUSING ONLY ${RED}(${YELLOW}MOBILE DATA${RED}) / ဆက်လက်လုပ်ရန် မိုဘိုင်းဒေတာသာ အသုံးပြုနေသည်ကို အာမခံပါ\n${YELLOW}ENABLED ${GREEN}ENTER ${YELLOW}TO CONTINUE.. / ဆက်လက်လုပ်ရန် ENTER ကို နှိပ်ပါ.. ${SCOLOR}"; read
 $HOME/dns -udp ${dns}:53 -pubkey ${chave} ${ns} 127.0.0.1:2222 > /dev/null 2>&1 &
 echo -e "\n${RED}[${GREEN}√${RED}]${SCOLOR} - ${GREEN}SLOWDNS INICIADO!${SCOLOR} - ${RED}[${GREEN}√${RED}]\n\n${RED}[${YELLOW}!${RED}] ${YELLOW}AGORA CONECTE-SE EM UM APP VPN\nOU CLICK EM ${GREEN}ENTER ${RED}PARA DESCONECTAR ${SCOLOR}"; read
 piddns=$(ps x| grep -w 'dns' | grep -v 'grep'| awk -F' ' {'print $1'})

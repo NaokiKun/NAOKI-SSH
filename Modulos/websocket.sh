@@ -11,7 +11,7 @@ fun_bar () {
           ) > /dev/null 2>&1 &
           tput civis
 		  echo -e "\033[1;31m---------------------------------------------------\033[1;37m"
-          echo -ne "${col7}    AGUARDE..\033[1;35m["
+          echo -ne "${col7}    PLEASE WAIT.. / စောင့်ဆိုင်းပါ..\033[1;35m["
           while true; do
           for((i=0; i<18; i++)); do
           echo -ne "\033[1;34m#"
@@ -22,7 +22,7 @@ fun_bar () {
          sleep 1s
          tput cuu1
          tput dl1
-         echo -ne "\033[1;37m    AGUARDE..\033[1;35m["
+         echo -ne "\033[1;37m    PLEASE WAIT.. / စောင့်ဆိုင်းပါ..\033[1;35m["
          done
          echo -e "\033[1;35m]\033[1;37m -\033[1;32m INSTALADO !\033[1;37m"
          tput cnorm
@@ -34,9 +34,9 @@ clear&&clear
 echo -e "\033[1;31m———————————————————————————————————————————————————\033[1;37m"
 echo -e "\033[1;32m             MODDERAJUDA WEBSOCKET SSH "
 echo -e "\033[1;31m———————————————————————————————————————————————————\033[1;37m"
-echo -e "\033[1;37m      WEBSOCKET SSH USARA A PORTA 80 e 443"
+echo -e "\033[1;37m      WEBSOCKET SSH WILL USE PORT 80 and 443 / WEBSOCKET SSH သည် Port 80 နှင့် 443 ကို အသုံးပြုမည်"
 echo
-echo -e "\033[1;37m                 INSTALANDO SSL... "
+echo -e "\033[1;37m                 INSTALLING SSL... / SSL ထည့်ဆောင်နေသည်... "
 inst_ssl () {
 
 apt-get install stunnel4 -y
