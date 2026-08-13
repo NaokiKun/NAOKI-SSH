@@ -1,0 +1,176 @@
+#!/usr/bin/env bash
+
+# NAOKI SSH bilingual language support.
+# Supported languages: en (English) and my (Myanmar).
+NAOKI_LANG_FILE="${NAOKI_LANG_FILE:-/etc/naoki-ssh-language}"
+NAOKI_LANG="${NAOKI_LANG:-}"
+
+naoki_lang_init() {
+    local saved=""
+    if [[ -r "$NAOKI_LANG_FILE" ]]; then
+        IFS= read -r saved < "$NAOKI_LANG_FILE"
+    fi
+    if [[ "$saved" == "en" || "$saved" == "my" ]]; then
+        NAOKI_LANG="$saved"
+    elif [[ "$NAOKI_LANG" != "en" && "$NAOKI_LANG" != "my" ]]; then
+        NAOKI_LANG="en"
+    fi
+    export NAOKI_LANG
+}
+
+naoki_lang_save() {
+    local selected="$1"
+    [[ "$selected" != "en" && "$selected" != "my" ]] && return 1
+    NAOKI_LANG="$selected"
+    export NAOKI_LANG
+    if [[ "$EUID" -eq 0 ]]; then
+        printf '%s\n' "$selected" > "$NAOKI_LANG_FILE"
+        chmod 644 "$NAOKI_LANG_FILE"
+    else
+        printf '%s\n' "$selected" > "${HOME}/.naoki-ssh-language"
+    fi
+}
+
+# Usage: t KEY
+# Keep keys stable so modules can use the same translations over time.
+t() {
+    local key="$1"
+    if [[ "$NAOKI_LANG" == "my" ]]; then
+        case "$key" in
+            TITLE) printf '%s' 'NAOKI SSH' ;;
+            DASHBOARD) printf '%s' 'အဓိကမီနူး' ;;
+            CREATE_USER) printf '%s' 'SSH User ဖန်တီးရန်' ;;
+            CREATE_TEST) printf '%s' 'Test User ဖန်တီးရန်' ;;
+            REMOVE_USER) printf '%s' 'User ဖျက်ရန်' ;;
+            ONLINE_MONITOR) printf '%s' 'Online စောင့်ကြည့်ရန်' ;;
+            CHANGE_EXPIRY) printf '%s' 'သက်တမ်းပြောင်းရန်' ;;
+            CONNECTION_LIMIT) printf '%s' 'ချိတ်ဆက်မှုကန့်သတ်ချက်' ;;
+            CHANGE_PASSWORD) printf '%s' 'စကားဝှက်ပြောင်းရန်' ;;
+            REMOVE_EXPIRED) printf '%s' 'သက်တမ်းကုန် User ဖျက်ရန်' ;;
+            USER_REPORT) printf '%s' 'User အစီရင်ခံစာ' ;;
+            CONNECTION_MODE) printf '%s' 'ချိတ်ဆက်မှုပုံစံ' ;;
+            SWAP_MEMORY) printf '%s' 'Swap Memory ဖန်တီးရန်' ;;
+            SPEED_TEST) printf '%s' 'အမြန်နှုန်းစမ်းရန်' ;;
+            BANNER) printf '%s' 'Banner ပြင်ရန်' ;;
+            TRAFFIC) printf '%s' 'Traffic စောင့်ကြည့်ရန်' ;;
+            OPTIMIZE) printf '%s' 'စနစ်အကောင်းဆုံးပြင်ဆင်ရန်' ;;
+            BACKUP) printf '%s' 'Backup' ;;
+            TOOLS) printf '%s' 'Tools' ;;
+            LIMITER) printf '%s' 'SSH Limiter' ;;
+            TUNING) printf '%s' 'Tuning မီနူး' ;;
+            FIREWALL) printf '%s' 'Firewall မီနူး' ;;
+            VPS_INFO) printf '%s' 'VPS အချက်အလက်' ;;
+            MORE) printf '%s' 'အခြားများ' ;;
+            CHECK_USER) printf '%s' 'User စစ်ဆေးရန်' ;;
+            BADVPN) printf '%s' 'BadVPN' ;;
+            V2RAY) printf '%s' 'V2Ray' ;;
+            ADD_HOST) printf '%s' 'Host ထည့်ရန်' ;;
+            REMOVE_HOST) printf '%s' 'Host ဖျက်ရန်' ;;
+            RESTART_SYSTEM) printf '%s' 'စနစ် Restart လုပ်ရန်' ;;
+            RESTART_SERVICES) printf '%s' 'Services Restart လုပ်ရန်' ;;
+            BLOCK_TORRENT) printf '%s' 'Torrent ပိတ်ရန်' ;;
+            TELEGRAM_BOT) printf '%s' 'Telegram Bot' ;;
+            TEST_BOT) printf '%s' 'Test Bot' ;;
+            CHANGE_ROOT_PASSWORD) printf '%s' 'Root စကားဝှက်ပြောင်းရန်' ;;
+            AUTO_EXEC) printf '%s' 'Auto Start' ;;
+            UPDATE_SCRIPT) printf '%s' 'Script Update' ;;
+            REMOVE_SCRIPT) printf '%s' 'Script ဖျက်ရန်' ;;
+            TCP_TWEAKER) printf '%s' 'TCP Tweaker' ;;
+            EXIT) printf '%s' 'ထွက်ရန်' ;;
+            CHOOSE) printf '%s' 'ရွေးချယ်မှုထည့်ပါ' ;;
+            INVALID) printf '%s' 'မမှန်ကန်သောရွေးချယ်မှု' ;;
+            LANGUAGE) printf '%s' 'ဘာသာစကား' ;;
+            SELECT_LANGUAGE) printf '%s' 'ဘာသာစကားရွေးချယ်ပါ' ;;
+            ENGLISH) printf '%s' 'English' ;;
+            MYANMAR) printf '%s' 'မြန်မာ' ;;
+            LANGUAGE_SAVED) printf '%s' 'ဘာသာစကားသိမ်းပြီးပါပြီ' ;;
+            PRESS_ENTER) printf '%s' 'ပြန်သွားရန် Enter နှိပ်ပါ' ;;
+            ONLINE) printf '%s' 'Online' ;;
+            EXPIRED) printf '%s' 'သက်တမ်းကုန်' ;;
+            TOTAL) printf '%s' 'စုစုပေါင်း' ;;
+            SYSTEM) printf '%s' 'စနစ်' ;;
+            MEMORY) printf '%s' 'Memory' ;;
+            PROCESSOR) printf '%s' 'Processor' ;;
+            *) printf '%s' "$key" ;;
+        esac
+    else
+        case "$key" in
+            TITLE) printf '%s' 'NAOKI SSH' ;;
+            DASHBOARD) printf '%s' 'Dashboard' ;;
+            CREATE_USER) printf '%s' 'Create SSH User' ;;
+            CREATE_TEST) printf '%s' 'Create Test User' ;;
+            REMOVE_USER) printf '%s' 'Remove User' ;;
+            ONLINE_MONITOR) printf '%s' 'Online Monitor' ;;
+            CHANGE_EXPIRY) printf '%s' 'Change Expiry' ;;
+            CONNECTION_LIMIT) printf '%s' 'Connection Limit' ;;
+            CHANGE_PASSWORD) printf '%s' 'Change Password' ;;
+            REMOVE_EXPIRED) printf '%s' 'Remove Expired Users' ;;
+            USER_REPORT) printf '%s' 'User Report' ;;
+            CONNECTION_MODE) printf '%s' 'Connection Mode' ;;
+            SWAP_MEMORY) printf '%s' 'Create Swap Memory' ;;
+            SPEED_TEST) printf '%s' 'Speed Test' ;;
+            BANNER) printf '%s' 'Banner' ;;
+            TRAFFIC) printf '%s' 'Traffic Monitor' ;;
+            OPTIMIZE) printf '%s' 'Optimize' ;;
+            BACKUP) printf '%s' 'Backup' ;;
+            TOOLS) printf '%s' 'Tools' ;;
+            LIMITER) printf '%s' 'SSH Limiter' ;;
+            TUNING) printf '%s' 'Tuning Menu' ;;
+            FIREWALL) printf '%s' 'Firewall Menu' ;;
+            VPS_INFO) printf '%s' 'VPS Info' ;;
+            MORE) printf '%s' 'More' ;;
+            CHECK_USER) printf '%s' 'Check User' ;;
+            BADVPN) printf '%s' 'BadVPN' ;;
+            V2RAY) printf '%s' 'V2Ray' ;;
+            ADD_HOST) printf '%s' 'Add Host' ;;
+            REMOVE_HOST) printf '%s' 'Remove Host' ;;
+            RESTART_SYSTEM) printf '%s' 'Restart System' ;;
+            RESTART_SERVICES) printf '%s' 'Restart Services' ;;
+            BLOCK_TORRENT) printf '%s' 'Block Torrent' ;;
+            TELEGRAM_BOT) printf '%s' 'Telegram Bot' ;;
+            TEST_BOT) printf '%s' 'Test Bot' ;;
+            CHANGE_ROOT_PASSWORD) printf '%s' 'Change Root Password' ;;
+            AUTO_EXEC) printf '%s' 'Auto Start' ;;
+            UPDATE_SCRIPT) printf '%s' 'Update Script' ;;
+            REMOVE_SCRIPT) printf '%s' 'Remove Script' ;;
+            TCP_TWEAKER) printf '%s' 'TCP Tweaker' ;;
+            EXIT) printf '%s' 'Exit' ;;
+            CHOOSE) printf '%s' 'Choose an option' ;;
+            INVALID) printf '%s' 'Invalid option' ;;
+            LANGUAGE) printf '%s' 'Language' ;;
+            SELECT_LANGUAGE) printf '%s' 'Select language' ;;
+            ENGLISH) printf '%s' 'English' ;;
+            MYANMAR) printf '%s' 'Myanmar' ;;
+            LANGUAGE_SAVED) printf '%s' 'Language saved' ;;
+            PRESS_ENTER) printf '%s' 'Press Enter to return' ;;
+            ONLINE) printf '%s' 'Online' ;;
+            EXPIRED) printf '%s' 'Expired' ;;
+            TOTAL) printf '%s' 'Total' ;;
+            SYSTEM) printf '%s' 'System' ;;
+            MEMORY) printf '%s' 'Memory' ;;
+            PROCESSOR) printf '%s' 'Processor' ;;
+            *) printf '%s' "$key" ;;
+        esac
+    fi
+}
+
+language_menu() {
+    clear
+    printf '\n%s / %s\n' "$(t SELECT_LANGUAGE)" 'ဘာသာစကားရွေးချယ်ပါ'
+    printf '[1] %s\n' "$(t ENGLISH)"
+    printf '[2] %s\n' "$(t MYANMAR)"
+    printf '[0] %s\n' "$(t EXIT)"
+    printf '%s: ' "$(t CHOOSE)"
+    local choice
+    read -r choice
+    case "$choice" in
+        1) naoki_lang_save en ;;
+        2) naoki_lang_save my ;;
+        0) return 0 ;;
+        *) printf '%s\n' "$(t INVALID)"; sleep 1; return 1 ;;
+    esac
+    printf '%s\n' "$(t LANGUAGE_SAVED)"
+    sleep 1
+}
+
+naoki_lang_init
