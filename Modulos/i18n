@@ -61,7 +61,7 @@ t() {
             FIREWALL) printf '%s' 'Firewall မီနူး' ;;
             VPS_INFO) printf '%s' 'VPS အချက်အလက်' ;;
             MORE) printf '%s' 'အခြားများ' ;;
-            CHECK_USER) printf '%s' 'User စစ်ဆေးရန်' ;;
+            CHECK_USER) printf '%s' 'NAOKI Checker' ;;
             BADVPN) printf '%s' 'BadVPN' ;;
             V2RAY) printf '%s' 'V2Ray' ;;
             ADD_HOST) printf '%s' 'Host ထည့်ရန်' ;;
@@ -91,6 +91,13 @@ t() {
             SYSTEM) printf '%s' 'စနစ်' ;;
             MEMORY) printf '%s' 'Memory' ;;
             PROCESSOR) printf '%s' 'Processor' ;;
+            OS) printf '%s' 'OS' ;;
+            RAM) printf '%s' 'RAM' ;;
+            CORES) printf '%s' 'Cores' ;;
+            HOUR) printf '%s' 'အချိန်' ;;
+            IN_USE) printf '%s' 'အသုံးပြုနေသည်' ;;
+            UPDATE_AVAILABLE) printf '%s' 'Update ရှိပါသည်' ;;
+            EXITING) printf '%s' 'ထွက်နေသည်...' ;;
             *) printf '%s' "$key" ;;
         esac
     else
@@ -119,7 +126,7 @@ t() {
             FIREWALL) printf '%s' 'Firewall Menu' ;;
             VPS_INFO) printf '%s' 'VPS Info' ;;
             MORE) printf '%s' 'More' ;;
-            CHECK_USER) printf '%s' 'Check User' ;;
+            CHECK_USER) printf '%s' 'NAOKI' ;;
             BADVPN) printf '%s' 'BadVPN' ;;
             V2RAY) printf '%s' 'V2Ray' ;;
             ADD_HOST) printf '%s' 'Add Host' ;;
@@ -149,6 +156,13 @@ t() {
             SYSTEM) printf '%s' 'System' ;;
             MEMORY) printf '%s' 'Memory' ;;
             PROCESSOR) printf '%s' 'Processor' ;;
+            OS) printf '%s' 'OS' ;;
+            RAM) printf '%s' 'RAM' ;;
+            CORES) printf '%s' 'Cores' ;;
+            HOUR) printf '%s' 'Time' ;;
+            IN_USE) printf '%s' 'In use' ;;
+            UPDATE_AVAILABLE) printf '%s' 'Update available' ;;
+            EXITING) printf '%s' 'Exiting...' ;;
             *) printf '%s' "$key" ;;
         esac
     fi

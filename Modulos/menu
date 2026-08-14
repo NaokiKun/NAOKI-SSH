@@ -244,15 +244,15 @@ echo -e "
 echo -e "╔═══════════════════════════•⊱✦⊰•═══════════════════════════╗" | lolcat
 echo -e "\033[0;36m \E[5;34;47m                  ★  $(t TITLE)  ★                \E[0m \033[1;31m"
 echo -e "╚═══════════════════════════•⊱✦⊰•═══════════════════════════╝" | lolcat
-echo -e "\033[0;36m  \033[1;32mSISTEMA           \033[1;31m  \033[1;32mMEMÓRIA RAM      \033[1;31m \033[1;32m PROCESSADOR      \033[1;31m"
-echo -e "\033[0;36m  \033[1;36mOS: \033[1;37m$_system    \033[1;31m  \033[1;36mTotal:\033[1;37m$_ram \033[1;31m  \033[1;36mNucleos: \033[1;37m$_core\033[0m   \033[1;31m"
-echo -e "\033[0;36m  \033[1;36mHora: \033[1;37m$_hora    \033[1;31m  \033[1;36mEm uso: \033[1;37m$_usor \033[1;31m  \033[1;36mEm uso: \033[1;37m$_usop\033[0m    \033[1;31m"
+echo -e "\033[0;36m  \033[1;32m$(t SYSTEM)           \033[1;31m  \033[1;32m$(t RAM)      \033[1;31m \033[1;32m $(t PROCESSOR)      \033[1;31m"
+echo -e "\033[0;36m  \033[1;36m$(t OS): \033[1;37m$_system    \033[1;31m  \033[1;36m$(t TOTAL):\033[1;37m$_ram \033[1;31m  \033[1;36m$(t CORES): \033[1;37m$_core\033[0m   \033[1;31m"
+echo -e "\033[0;36m  \033[1;36m$(t HOUR): \033[1;37m$_hora    \033[1;31m  \033[1;36m$(t IN_USE): \033[1;37m$_usor \033[1;31m  \033[1;36m$(t IN_USE): \033[1;37m$_usop\033[0m    \033[1;31m"
 echo -e "° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° °" | lolcat
 [[ ! -e /tmp/att ]]  && {
-    echo -e "\033[1;31m  \033[1;32mOnlines:\033[1;37m $_onlin    \033[1;31m  \033[1;32mExpirados: \033[1;37m$_userexp \033[1;31m  \033[1;32mTotal: \033[1;37m$_tuser\033[0m     \033[1;31m"
+    echo -e "\033[1;31m  \033[1;32m$(t ONLINE):\033[1;37m $_onlin    \033[1;31m  \033[1;32m$(t EXPIRED): \033[1;37m$_userexp \033[1;31m  \033[1;32m$(t TOTAL): \033[1;37m$_tuser\033[0m     \033[1;31m"
     var01='\033[1;37m•'
 } || {
-    echo -e "\033[1;31m         \033[1;33m[\033[1;31m!\033[1;33m]  \033[1;32mEXISTE UMA ATUALIZACAO DISPONIVEL  \033[1;33m[\033[1;31m!\033[1;33m]\033[0m        \033[1;31m"
+    echo -e "\033[1;31m         \033[1;33m[\033[1;31m!\033[1;33m]  \033[1;32m$(t UPDATE_AVAILABLE)  \033[1;33m[\033[1;31m!\033[1;33m]\033[0m        \033[1;31m"
     var01="\033[1;32m!"
 }
 echo -e "° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° °" | lolcat
@@ -264,18 +264,18 @@ printf "  [25] %-26s [32] %s\n" "$(t BLOCK_TORRENT)" "$(t TCP_TWEAKER)"
 printf "  [26] %-26s [33] %s\n" "$(t TELEGRAM_BOT)" "$(t EXIT)"
 printf "  [27] %-26s [00] %s\n" "$(t TEST_BOT)" "$(t EXIT)"
 printf "  [L]  %-26s\n" "$(t LANGUAGE)"
-echo -ne "\033[0;36m➤ \033[0;31m ENTER AN OPTION / ရွေးချယ်စရာ ထည့်ပါ \033[1;33m:"; read x
+echo -ne "\033[0;36m➤ \033[0;31m $(t CHOOSE) \033[1;33m:"; read x
 case "$x" in
    21)
    clear
    addhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    menu2
    ;;
    22)
    clear
    delhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    menu2
    ;;
    23)
@@ -319,13 +319,13 @@ case "$x" in
    menu
    ;;
    0|00)
-   echo -e "\033[1;31mSaindo...\033[0m"
+   echo -e "\033[1;31m$(t EXITING)\033[0m"
    sleep 2
    clear
    exit;
    ;;
    *)
-   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
+   echo -e "\n\033[1;31m$(t INVALID)\033[0m"
    sleep 2
 esac
 }
@@ -370,11 +370,11 @@ echo -e "
 echo -e "╔═══════════════════════════•⊱✦⊰•═══════════════════════════╗" | lolcat
 echo -e "\033[0;36m \E[5;34;47m                  ★  $(t TITLE)  ★                \E[0m \033[1;31m"
 echo -e "╚═══════════════════════════•⊱✦⊰•═══════════════════════════╝" | lolcat
-echo -e "\033[0;36m  \033[1;32mSISTEMA           \033[1;31m  \033[1;32mMEMÓRIA RAM      \033[1;31m \033[1;32m PROCESSADOR      \033[1;31m"
-echo -e "\033[0;36m  \033[1;36mOS: \033[1;37m$_system    \033[1;31m  \033[1;36mTotal:\033[1;37m$_ram \033[1;31m  \033[1;36mNucleos: \033[1;37m$_core\033[0m   \033[1;31m"
-echo -e "\033[0;36m  \033[1;36mHora: \033[1;37m$_hora    \033[1;31m  \033[1;36mEm uso: \033[1;37m$_usor \033[1;31m  \033[1;36mEm uso: \033[1;37m$_usop\033[0m    \033[1;31m"
+echo -e "\033[0;36m  \033[1;32m$(t SYSTEM)           \033[1;31m  \033[1;32m$(t RAM)      \033[1;31m \033[1;32m $(t PROCESSOR)      \033[1;31m"
+echo -e "\033[0;36m  \033[1;36m$(t OS): \033[1;37m$_system    \033[1;31m  \033[1;36m$(t TOTAL):\033[1;37m$_ram \033[1;31m  \033[1;36m$(t CORES): \033[1;37m$_core\033[0m   \033[1;31m"
+echo -e "\033[0;36m  \033[1;36m$(t HOUR): \033[1;37m$_hora    \033[1;31m  \033[1;36m$(t IN_USE): \033[1;37m$_usor \033[1;31m  \033[1;36m$(t IN_USE): \033[1;37m$_usop\033[0m    \033[1;31m"
 echo -e "° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° °" | lolcat
-echo -e "\033[0;36m  \033[1;32mOnlines:\033[1;37m $_onlin    \033[1;31m  \033[1;32mExpirados: \033[1;37m$_userexp \033[1;31m  \033[1;32mTotal: \033[1;37m$_tuser     \033[1;31m"
+echo -e "\033[0;36m  \033[1;32m$(t ONLINE):\033[1;37m $_onlin    \033[1;31m  \033[1;32m$(t EXPIRED): \033[1;37m$_userexp \033[1;31m  \033[1;32m$(t TOTAL): \033[1;37m$_tuser     \033[1;31m"
 echo -e "° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° ° °" | lolcat
 printf "  [01] %-26s [12] %s\n" "$(t CREATE_USER)" "$(t SPEED_TEST)"
 printf "  [02] %-26s [13] %s\n" "$(t CREATE_TEST)" "$(t BANNER)"
@@ -389,19 +389,19 @@ printf "  [10] %-26s [21] %s\n" "$(t CONNECTION_MODE)" "$(t VPS_INFO)"
 printf "  [11] %-26s [22] %s\n" "$(t SWAP_MEMORY)" "$(t MORE)"
 printf "  [L]  %-26s [00] %s\n" "$(t LANGUAGE)" "$(t EXIT)"
 echo -e " ╭─────────────────╮ ╭─────────────────╮ ╭─────────────────╮" | lolcat
-echo -e "\033[1;33m   C \033[1;36m➤ \033[47;1;36m CHECKUSER \033[0;31m      \033[1;33mB \033[1;36m➤ \033[47;1;36m BADVPN \033[0;31m      \033[1;33m   V \033[1;36m➤ \033[47;1;36m V2RAY \033[0m"
+echo -e "\033[1;33m   C \033[1;36m➤ \033[47;1;36m $(t CHECK_USER) \033[0;31m      \033[1;33mB \033[1;36m➤ \033[47;1;36m $(t BADVPN) \033[0;31m      \033[1;33m   V \033[1;36m➤ \033[47;1;36m $(t V2RAY) \033[0m"
 echo -e " ╰─────────────────╯ ╰─────────────────╯ ╰─────────────────╯" | lolcat
-echo -ne "\033[0;36m➤ \033[0;31m ENTER AN OPTION / ရွေးချယ်စရာ ထည့်ပါ \033[1;33m:"; read x
+echo -ne "\033[0;36m➤ \033[0;31m $(t CHOOSE) \033[1;33m:"; read x
 case "$x" in 
    1 | 01)
    clear
    criarusuario
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    2 | 02)
    clear
    criarteste
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    3 | 03)
    clear
@@ -411,7 +411,7 @@ case "$x" in
    4 | 04)
    clear
    sshmonitor
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;      
    5 | 05)
    clear
@@ -437,7 +437,7 @@ case "$x" in
    9 | 09)
    clear
    infousers
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    10)
    conexao
@@ -449,7 +449,7 @@ case "$x" in
    12)
    clear
    velocity
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    13)
    clear
@@ -465,11 +465,11 @@ case "$x" in
    15)
    clear
    otimizar
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    16)
    userbackup
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    17)
    clear
@@ -487,7 +487,7 @@ case "$x" in
    21)
    clear
    detalhes
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;33m$(t PRESS_ENTER)\033[0m: "; read
    ;;
    33)
    menu
@@ -507,7 +507,7 @@ case "$x" in
    bash <(curl -Ls https://raw.githubusercontent.com/X-UI-Unofficial/release/main/install.sh) 221120_v5
    ;;
    *)
-   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
+   echo -e "\n\033[1;31m$(t INVALID)\033[0m"
    sleep 2
 esac
 done
