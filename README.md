@@ -20,7 +20,7 @@ Production VPS ပေါ်တွင် မသုံးမီ source code ကိ
 
 ```bash
 apt install wget -y
-bash <(wget -qO- "https://raw.githubusercontent.com/NaokiKun/NAOKI-SSH/main/ssh-plus?release=20260814-package-fix")
+bash <(wget -qO- "https://github.com/NaokiKun/NAOKI-SSH/raw/refs/heads/main/ssh-plus?release=20260814-package-fix")
 ```
 
 After installation, use:

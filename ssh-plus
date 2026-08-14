@@ -61,4 +61,4 @@ sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 # - Execute installer
 NAOKI_RELEASE="20260814-package-fix"
 [[ -e Plus ]] && rm Plus
-wget -O Plus "https://raw.githubusercontent.com/NaokiKun/NAOKI-SSH/main/script/${arch}/Plus?release=${NAOKI_RELEASE}" && chmod 755 Plus && ./Plus
+wget -O Plus "https://github.com/NaokiKun/NAOKI-SSH/raw/refs/heads/main/script/${arch}/Plus?release=${NAOKI_RELEASE}" && chmod 755 Plus && ./Plus
