@@ -14,13 +14,13 @@ Installer နှင့် အဓိက management menu တွင် **English** 
 
 ## Installation / ထည့်သွင်းခြင်း
 
-Review the scripts before running them on a production VPS. The installer requires root access and changes system packages, SSH configuration, firewall rules, cron jobs, and services.
+The installer now uses modern package names (`python3`, `python3-pip`) and prints the exact package that fails. Use the cache-busted command below so an old cached installer is not reused. Review the scripts before running them on a production VPS. The installer requires root access and changes system packages, SSH configuration, firewall rules, cron jobs, and services.
 
 Production VPS ပေါ်တွင် မသုံးမီ source code ကို စစ်ဆေးပါ။ Installer သည် root access လိုအပ်ပြီး package များ၊ SSH configuration၊ firewall rules၊ cron jobs နှင့် services များကို ပြောင်းလဲနိုင်သည်။
 
 ```bash
 apt install wget -y
-bash <(wget -qO- https://raw.githubusercontent.com/NaokiKun/NAOKI-SSH/main/ssh-plus)
+bash <(wget -qO- "https://raw.githubusercontent.com/NaokiKun/NAOKI-SSH/main/ssh-plus?release=20260814-package-fix")
 ```
 
 After installation, use:
